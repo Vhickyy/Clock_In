@@ -1,3 +1,54 @@
-/* You can add global styles to this file, and also import other style files */
-
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
 @import 'tailwindcss';
+
+@theme {
+  /* Base */
+  --color-background: #faf8f3;
+  --color-surface: #ffffff;
+  --color-border: #e8e2d5;
+
+  /* Text */
+  --color-text: #202638;
+  --color-muted: #697184;
+  --color-error: #b84a4a;
+
+  /* Brand */
+  --color-primary: #17233c;
+  --color-primary-light: #e9ecf2;
+  --color-primary-dark: #0d1426;
+
+  /* Premium Accents */
+  --color-champagne: #d6b878;
+  --color-champagne-light: #f5efdf;
+
+  /* Supporting Accents */
+  --color-purple: #8b5cf6;
+  --color-purple-light: #f1ebfd;
+
+  --color-amber: #f5a623;
+  --color-amber-light: #fdf2df;
+
+  --color-green: #287a58;
+  --color-green-light: #e7f4ec;
+
+  --color-rose: #e14f4f;
+  --color-rose-light: #fceaea;
+
+  /* Fonts */
+  --font-heading: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+  --font-script: 'Allura', cursive;
+  --font-body: 'Inter', sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+}
+
+@layer components {
+  .containerClass {
+    @apply mx-auto w-[90%] max-w-[1440px];
+  }
+}

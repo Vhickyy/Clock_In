@@ -1,0 +1,25 @@
+@switch (config().tag) {
+  @case ('h1') {
+    <h1 [class]="classes()" [innerHTML]="text()"></h1>
+  }
+
+  @case ('h2') {
+    <h2 [class]="classes()" [innerHTML]="text()"></h2>
+  }
+
+  @case ('h3') {
+    <h3 [class]="classes()" [innerHTML]="text()"></h3>
+  }
+
+  @case ('h4') {
+    <h4 [class]="classes()" [innerHTML]="text()"></h4>
+  }
+
+  @case ('p') {
+    <p [class]="classes()" [innerHTML]="text()"></p>
+  }
+
+  @case ('span') {
+    <span [class]="classes()" [innerHTML]="text()"></span>
+  }
+}

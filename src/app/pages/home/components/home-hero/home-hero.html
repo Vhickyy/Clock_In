@@ -1,0 +1,112 @@
+<section class="flex justify-between items-center ml-[5%] gap-20">
+  <div class="grid gap-4 py-20 w-[40%]">
+    <app-text
+      variant="eyebrow"
+      text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
+      className="text-champagne"
+    />
+    <app-text
+      variant="hero"
+      text="The Smarter Way to Manage Your Invited Guests."
+      className="font-heading leading-none"
+    />
+    <app-text
+      text="Every event has its own way of doing things. Clock In Guest gives organizers the flexibility to choose how invited guests are verified at the door."
+      className="py-4"
+    />
+    <div class="flex gap-4">
+      <app-button
+        [textProps]="{ text: 'Get Started' }"
+        btnClass="px-8 bg-primary"
+        [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
+      />
+      <app-button
+        [textProps]="{ text: 'How It Works' }"
+        btnClass="px-8 bg-transparent border border-primary text-primary"
+      />
+    </div>
+  </div>
+  <img src="clock_in_hero.png" alt="Clock In Hero" class="w-[60%] object-cover h-full bg-primary" />
+</section>
+
+<section class="containerClass flex justify-between py-30">
+  @for (feat of features; track $index) {
+    <div class="grid gap-6">
+      <div class="rounded-full p-4 border border-champagne w-fit">
+        <app-icon name="users" [size]="25" />
+      </div>
+      <app-text [text]="feat.title" variant="subheading" className="font-extrabold" />
+      <app-text [text]="feat.description" className="w-[70%]" />
+    </div>
+  }
+</section>
+
+<section class="flex justify-between items-center containerClass gap-8">
+  <div class="grid gap-4 py-20 w-[40%]">
+    <app-text
+      variant="eyebrow"
+      text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
+      className="text-champagne"
+    />
+    <app-text
+      variant="heading"
+      text="From Invitation to Check-In In 3 Simple Steps."
+      className="font-heading leading-none"
+    />
+    <app-text
+      text="Every event has its own way of doing things. Clock In Guest gives organizers the flexibility to choose how invited guests are verified at the door."
+      className="py-4"
+    />
+    <app-button
+      [textProps]="{ text: 'Learn More' }"
+      btnClass="px-8 rounded-full w-fit"
+      [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
+    />
+  </div>
+  <div class="grid grid-cols-3 gap-4 w-[70%]">
+    @for (item of howItWorks; track $index) {
+      <div class="flex gap-4 items-center py-4">
+        <div class="grid gap-2">
+          <app-text [text]="item.title" variant="subheading" className="font-extrabold" />
+          <app-text [text]="item.description" />
+        </div>
+      </div>
+    }
+  </div>
+</section>
+
+<section class="bg-primary">
+  <div class="containerClass flex justify-between items-center gap-8">
+    <div class="grid gap-4 py-20 w-[40%]">
+      <app-text
+        variant="eyebrow"
+        text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
+        className="text-champagne"
+      />
+      <app-text
+        variant="heading"
+        text="Any Event. Any Occasion."
+        className="font-heading leading-none text-white"
+      />
+      <app-text
+        text="Whether it's a wedding, birthday, or corporate event, Clock In Guest makes it easy to manage guest verification and create a seamless experience for everyone involved."
+        className="py-4 text-white"
+      />
+      <app-button
+        [textProps]="{ text: 'Learn More' }"
+        btnClass="px-8 rounded-full w-fit"
+        [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
+      />
+    </div>
+    <div class="grid grid-cols-3 gap-4 w-[70%]">
+      @for (item of howItWorks; track $index) {
+        <div class="flex gap-4 items-center py-4">
+          <div class="grid gap-2">
+            <app-text [text]="item.title" variant="subheading" className="font-extrabold" />
+            <app-text [text]="item.description" />
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>

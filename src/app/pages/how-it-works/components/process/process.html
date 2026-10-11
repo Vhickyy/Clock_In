@@ -1,0 +1,27 @@
+<section class="grid gap-8 py-28 containerClass">
+  <div class="grid gap-4 w-[30%]">
+    <app-text variant="eyebrow" text="THE PROCESS." className="text-champagne" />
+    <app-text variant="heading" text="How It Works" className="font-heading leading-none" />
+    <app-text
+      text="Every event has its own way of doing things. Clock In Guest gives organizers ."
+    />
+  </div>
+
+  <div class="grid grid-cols-4 gap-4">
+    @for (item of [1, 2, 3, 4]; track $index) {
+      <div class="grid gap-4 items-center p-4 bg-white rounded-xl">
+        <div class="grid gap-2">
+          <app-text [text]="'Step ' + item" variant="subheading" className="font-extrabold" />
+          <app-text
+            [text]="'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'"
+          />
+        </div>
+        <img
+          src="clock_in_hero.png"
+          alt="Clock In Hero"
+          class="w-full object-cover h-full bg-primary"
+        />
+      </div>
+    }
+  </div>
+</section>
