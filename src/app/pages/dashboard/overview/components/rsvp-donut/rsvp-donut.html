@@ -1,0 +1,24 @@
+<app-section-card title="RSVP Status" icon="users">
+  <div class="flex flex-wrap items-center gap-6">
+    <div class="relative size-40 shrink-0">
+      <!-- <canvas baseChart type="doughnut" [data]="chartData()" [options]="options"></canvas> -->
+
+      <!-- centre label, pointer-events-none so tooltips still work -->
+      <div class="pointer-events-none absolute inset-0 grid place-content-center text-center">
+        <app-text variant="chartValue" [text]="'' + total()" />
+        <app-text variant="chartLabel" text="Total RSVPs" />
+      </div>
+    </div>
+
+    <ul class="flex min-w-[170px] flex-1 flex-col gap-4">
+      @for (s of legend(); track s.label) {
+        <li class="flex items-center gap-3">
+          <span class="size-2 rounded-full" [class]="s.dotClass"></span>
+          <app-text variant="listSubtitle" className="flex-1 text-text" [text]="s.label" />
+          <app-text variant="listValue" [text]="'' + s.value" />
+          <app-text variant="listMeta" className="w-10 text-right" [text]="s.percent + '%'" />
+        </li>
+      }
+    </ul>
+  </div>
+</app-section-card>

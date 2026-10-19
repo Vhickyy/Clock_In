@@ -1,5 +1,5 @@
 <div class="overflow-x-auto">
-  <table class="w-full">
+  <table class="w-full bg-white rounded-xl border border-border overflow-hidden">
     <thead>
       @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
         <tr class="border-b border-border">
@@ -27,7 +27,7 @@
     </thead>
     <tbody>
       @for (row of table.getRowModel().rows; track row.id) {
-        <tr class="border-b border-border hover:bg-background/50">
+        <tr class="border-b bg-white border-border hover:bg-background/50">
           @for (cell of row.getVisibleCells(); track cell.id) {
             <td class="px-4 py-3">
               @if (cellTemplates()[cell.column.id]; as tpl) {
@@ -50,25 +50,11 @@
 </div>
 
 <!-- Pagination -->
-<!-- <div class="flex items-center justify-between px-4 py-3 border-t border-border">
-  <span class="font-body text-xs text-muted">
-    Page {{ table.getState().pagination.pageIndex + 1 }} of {{ table.getPageCount() }}
-    · {{ table.getFilteredRowModel().rows.length }} total
-  </span>
-  <div class="flex items-center gap-1.5">
-    <button
-      (click)="table.previousPage()"
-      [disabled]="!table.getCanPreviousPage()"
-      class="w-8 h-8 rounded-lg border border-border flex items-center justify-center disabled:opacity-40"
-    >
-      <svg [lucideIcon]="icons['chevLeft']" [size]="14"></svg>
-    </button>
-    <button
-      (click)="table.nextPage()"
-      [disabled]="!table.getCanNextPage()"
-      class="w-8 h-8 rounded-lg border border-border flex items-center justify-center disabled:opacity-40"
-    >
-      <svg [lucideIcon]="icons['chevRight']" [size]="14"></svg>
-    </button>
-  </div>
-</div> -->
+<app-pagination
+  [pageIndex]="table.getState().pagination.pageIndex"
+  [pageCount]="table.getPageCount()"
+  [pageSize]="table.getState().pagination.pageSize"
+  [total]="table.getFilteredRowModel().rows.length"
+  [itemLabel]="itemLabel()"
+  (pageChange)="table.setPageIndex($event)"
+/>

@@ -1,0 +1,26 @@
+<app-section-card
+  title="Upcoming Events"
+  icon="calendar"
+  actionLabel="View all"
+  (actionClick)="viewAll.emit()"
+>
+  <ul class="flex flex-col gap-4">
+    @for (event of events(); track event.id) {
+      <li class="flex items-center gap-3">
+        <img
+          [src]="event.image"
+          [alt]="event.name"
+          class="size-14 shrink-0 rounded-lg object-cover"
+        />
+        <div class="min-w-0 flex-1">
+          <app-text variant="listTitle" className="truncate" [text]="event.name" />
+          <app-text variant="listSubtitle" [text]="event.date" />
+          <app-text variant="listSubtitle" className="truncate" [text]="event.location" />
+        </div>
+        <!-- <app-status-badge [label]="event.status" [tone]="tone[event.status]" /> -->
+      </li>
+    } @empty {
+      <app-text variant="emptyState" text="No upcoming events." />
+    }
+  </ul>
+</app-section-card>

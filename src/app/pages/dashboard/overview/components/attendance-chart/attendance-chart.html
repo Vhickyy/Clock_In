@@ -1,0 +1,26 @@
+<app-section-card title="Event & Attendance Overview" icon="activity">
+  <button
+    slot="action"
+    type="button"
+    class="flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5"
+  >
+    <app-text variant="listMeta" className="text-text" [text]="range()" />
+    <app-icon name="chevDown" [size]="12" />
+  </button>
+
+  <div class="mb-2 flex items-center justify-end gap-4">
+    <span class="flex items-center gap-1.5">
+      <span class="size-2 rounded-full bg-coral"></span>
+      <app-text variant="listMeta" className="text-text" text="RSVPs" />
+    </span>
+    <span class="flex items-center gap-1.5">
+      <span class="size-2 rounded-full bg-primary"></span>
+      <app-text variant="listMeta" className="text-text" text="Checked In" />
+    </span>
+  </div>
+
+  <!-- Chart.js needs a sized, relatively-positioned parent when maintainAspectRatio is false -->
+  <div class="relative h-60 w-full">
+    <!-- <canvas baseChart type="line" [data]="chartData()" [options]="options"></canvas> -->
+  </div>
+</app-section-card>

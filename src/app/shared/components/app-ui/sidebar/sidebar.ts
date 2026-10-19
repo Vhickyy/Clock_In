@@ -43,20 +43,12 @@ export class Sidebar {
   }
 
   navItems = signal<NavItem[]>([
-    { icon: 'home', label: 'Dashboard', route: '/dashboard', exact: true },
-    { icon: 'users', label: 'Users', route: '/dashboard/users', exact: false },
-    { icon: 'users', label: 'Admins', route: '/dashboard/admins', exact: true },
-    { icon: 'activity', label: 'User Activity', route: '/dashboard/activity', exact: true },
-    {
-      icon: 'building',
-      label: 'Schools & Universities',
-      route: '/dashboard/universities',
-      exact: false,
-    },
-    // { icon: 'bookOpen', label: 'Courses', route: '/courses' },
-    // { icon: 'creditCard', label: 'Subscriptions', route: '/dashboard/subscriptions' },
-    { icon: 'chartCol', label: 'Analytics', route: '/dashboard/analytics', exact: true },
-    // { icon: 'bell', label: 'Reports', route: '/dashboard/reports' },
-    { icon: 'settings', label: 'Settings', route: '/dashboard/settings', exact: false },
+    { label: 'Dashboard', route: '/dashboard', icon: 'home', exact: true },
+    { label: 'Events', route: '/dashboard/events', icon: 'calendar', exact: false },
+    { label: 'Invitations', route: '/dashboard/invitations', icon: 'fileText', exact: true },
+    { label: 'Guests', route: '/dashboard/guests', icon: 'usersRound', exact: true },
+    { label: 'Reports', route: '/dashboard/reports', icon: 'chartCol', exact: true },
+    { label: 'Staff & Permissions', route: '/dashboard/staff', icon: 'userCog', exact: true },
+    { label: 'Settings', route: '/dashboard/settings', icon: 'settings', exact: true },
   ]);
 }

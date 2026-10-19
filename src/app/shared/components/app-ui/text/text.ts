@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { TextVariant } from '../app_types/text_types';
 import { cn } from '../../../utils/cn';
 import { textVariants } from '../utils/typography';
@@ -6,6 +6,7 @@ import { textVariants } from '../utils/typography';
 @Component({
   selector: 'app-text',
   imports: [],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './text.html',
   styleUrl: './text.css',
 })
@@ -16,11 +17,6 @@ export class Text {
 
   text = input.required<string>();
 
-  config() {
-    return textVariants[this.variant()];
-  }
-
-  classes() {
-    return cn(this.config().classes, this.className());
-  }
+  config = computed(() => textVariants[this.variant()]);
+  classes = computed(() => cn(this.config().classes, this.className()));
 }

@@ -1,4 +1,4 @@
-import { Component, input, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
 import { Text } from '../text/text';
 import { LucideDynamicIcon } from '@lucide/angular';
 import { Icon } from '../icon/icon';
@@ -7,6 +7,7 @@ import { Button } from '../button/button';
 @Component({
   selector: 'app-modal',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [Text, Icon, Button],
   templateUrl: './modal.html',
 })

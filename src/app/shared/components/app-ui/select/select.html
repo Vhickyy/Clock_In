@@ -1,0 +1,25 @@
+<div class="relative">
+  @if (icon(); as name) {
+    <span class="pointer-events-none absolute left-3.5 top-1/2 -translate-y-1/2 text-muted">
+      <app-icon [name]="name" [size]="16" />
+    </span>
+  }
+
+  <select
+    class="w-full cursor-pointer appearance-none rounded-xl border border-border bg-surface py-3 pr-10 font-body text-sm text-text outline-none focus:border-coral focus:ring-2 focus:ring-coral/20"
+    [class.pl-4]="!icon()"
+    [class.pl-10]="icon()"
+    [attr.aria-label]="ariaLabel()"
+    (change)="onChange($event)"
+  >
+    @for (option of options(); track option.value) {
+      <option [value]="option.value" [selected]="option.value === value()">
+        {{ option.label }}
+      </option>
+    }
+  </select>
+
+  <span class="pointer-events-none absolute right-3.5 top-1/2 -translate-y-1/2 text-muted">
+    <app-icon name="chevDown" [size]="16" />
+  </span>
+</div>

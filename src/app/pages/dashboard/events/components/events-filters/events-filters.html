@@ -1,0 +1,32 @@
+<div class="flex flex-wrap items-center gap-3">
+  <!-- <app-search-input
+        class="min-w-64 flex-1"
+        placeholder="Search by event name or venue..."
+        [(value)]="search"
+      /> -->
+  <app-select
+    class="w-44"
+    ariaLabel="Filter by status"
+    [options]="statusOptions"
+    [(value)]="eventService.status"
+  />
+  <app-select
+    class="w-48"
+    ariaLabel="Filter by event type"
+    [options]="typeOptions"
+    [(value)]="eventService.type"
+  />
+  <app-select
+    class="w-60"
+    ariaLabel="Filter by date range"
+    icon="calendar"
+    [options]="rangeOptions"
+    [(value)]="eventService.range"
+  />
+  <app-button
+    [textProps]="{ text: 'Clear filters', variant: 'buttonText' }"
+    [iconProps]="{ name: 'x', size: 16 }"
+    btnClass="flex items-center gap-2 rounded-xl border border-border bg-surface px-4 py-3 text-text transition hover:bg-background"
+    (click)="eventService.clear()"
+  />
+</div>

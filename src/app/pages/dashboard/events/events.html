@@ -1,0 +1,34 @@
+<div class="flex flex-col gap-6">
+  <div class="flex items-center justify-between gap-4">
+    <div class="w-[50%]">
+      <app-text text="Events" variant="heading" />
+      <app-text
+        text="Create and manage all your events in one place. Track attendance, view details and keep your guests informed."
+      />
+    </div>
+    <app-button
+      [textProps]="{ text: 'Create Event', variant: 'buttonText' }"
+      [iconProps]="{ name: 'plus', size: 18 }"
+      btnClass="px-6"
+      (click)="router.navigate(['/dashboard/events/new'])"
+    />
+  </div>
+
+  <section
+    class="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4"
+    aria-label="Event statistics"
+  >
+    @for (stat of eventService.stats; track stat.id) {
+      <app-stat-card
+        [icon]="stat.icon"
+        [label]="stat.label"
+        [value]="stat.value"
+        [trend]="stat.trend"
+      />
+    }
+  </section>
+
+  <app-events-filters />
+
+  <app-events-tables />
+</div>

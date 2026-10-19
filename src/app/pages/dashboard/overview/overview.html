@@ -1,0 +1,66 @@
+<div>
+  <!-- decorative banner, top-right, sits behind the 4th stat card -->
+  <!-- <app-hero-banner
+        class="absolute right-0 top-0 hidden h-[243px] w-[46%] lg:block"
+        src="assets/images/dashboard-banner.jpg"
+      /> -->
+
+  <!-- <app-dashboard-hero class="relative lg:col-start-1 lg:row-start-1" userName="Victoria" /> -->
+
+  <section
+    class="relative grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-4 lg:col-start-1 lg:row-start-2"
+  >
+    @for (stat of stats; track stat.id) {
+      <app-stat-card
+        [icon]="stat.icon"
+        /* [tone]="stat.tone" */
+        [label]="stat.label"
+        [value]="stat.value"
+        [trend]="stat.trend"
+      />
+    }
+  </section>
+</div>
+<div class="grid gap-6 lg:grid-cols-[minmax(0,1fr)_340px]">
+  <div class="grid gap-6 md:grid-cols-[1.6fr_1fr] lg:col-start-1 lg:row-start-3">
+    <app-section-card title="Event & Attendance Overview" icon="activity">
+      <button
+        slot="action"
+        type="button"
+        class="flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-1.5"
+      >
+        <!-- <app-text variant="listMeta" className="text-text" [text]="range()" /> -->
+        <app-icon name="chevDown" [size]="12" />
+      </button>
+
+      <div class="mb-2 flex items-center justify-end gap-4">
+        <span class="flex items-center gap-1.5">
+          <span class="size-2 rounded-full bg-coral"></span>
+          <app-text variant="listMeta" className="text-text" text="RSVPs" />
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span class="size-2 rounded-full bg-primary"></span>
+          <app-text variant="listMeta" className="text-text" text="Checked In" />
+        </span>
+      </div>
+
+      <!-- Chart.js needs a sized, relatively-positioned parent when maintainAspectRatio is false -->
+      <div class="relative h-60 w-full">
+        <!-- <canvas baseChart type="line" [data]="chartData()" [options]="options"></canvas> -->
+      </div>
+    </app-section-card>
+    <!-- <app-attendance-chart [data]="chartPoints" />
+        <app-rsvp-donut [data]="rsvpSegments" /> -->
+  </div>
+
+  <!-- <div class="grid gap-6 md:grid-cols-[1fr_1fr] lg:col-start-1"> -->
+  <div class="grid gap-6 md:grid-cols-[1fr_1fr] lg:col-start-1 lg:row-start-4">
+    <app-activity-list [items]="activities" />
+    <app-quick-actions [actions]="quickActions" (selected)="onQuickAction($event)" />
+  </div>
+
+  <aside class="flex flex-col gap-6 lg:col-start-2 lg:row-span-2 lg:row-start-3">
+    <app-upcoming-events [events]="upcomingEvents" />
+    <app-support-card />
+  </aside>
+</div>

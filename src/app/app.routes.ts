@@ -9,4 +9,26 @@ export const routes: Routes = [
     path: 'how-it-works',
     loadComponent: () => import('./pages/how-it-works/how-it-works').then((m) => m.HowItWorks),
   },
+  {
+    path: 'dashboard',
+    loadComponent: () =>
+      import('./shared/layout/dashboard-layout/dashboard-layout').then((m) => m.DashboardLayout),
+    children: [
+      {
+        path: '',
+        loadComponent: () => import('./pages/dashboard/overview/overview').then((m) => m.Overview),
+      },
+      {
+        path: 'events',
+        loadComponent: () => import('./pages/dashboard/events/events').then((m) => m.Events),
+      },
+      {
+        path: 'events/new',
+        loadComponent: () =>
+          import('./pages/dashboard/events/pages/create-event/create-event').then(
+            (m) => m.CreateEvent,
+          ),
+      },
+    ],
+  },
 ];

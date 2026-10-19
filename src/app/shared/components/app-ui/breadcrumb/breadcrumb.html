@@ -1,0 +1,14 @@
+<nav aria-label="Breadcrumb">
+  <ol class="flex items-center gap-2 font-body text-sm text-muted">
+    @for (item of items(); track item.label; let last = $last) {
+      <li class="flex items-center gap-2">
+        @if (item.route && !last) {
+          <a [routerLink]="item.route" class="transition hover:text-text">{{ item.label }}</a>
+          <app-icon name="chevRight" [size]="14" />
+        } @else {
+          <span class="text-text" [attr.aria-current]="last ? 'page' : null">{{ item.label }}</span>
+        }
+      </li>
+    }
+  </ol>
+</nav>

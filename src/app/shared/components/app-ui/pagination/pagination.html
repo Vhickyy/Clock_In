@@ -1,0 +1,39 @@
+<div class="flex items-center justify-between mt-6">
+  <app-text variant="listMeta" className="text-xs" [text]="summary()" />
+
+  @if (pageCount() > 1) {
+    <nav class="flex items-center gap-2" aria-label="Pagination">
+      <button
+        type="button"
+        aria-label="Previous page"
+        [class]="base + ' ' + idle"
+        [disabled]="pageIndex() === 0"
+        (click)="pageChange.emit(pageIndex() - 1)"
+      >
+        <app-icon name="chevLeft" [size]="16" />
+      </button>
+
+      @for (page of pages(); track page) {
+        <button
+          type="button"
+          [class]="base + ' ' + (page === pageIndex() ? active : idle)"
+          [attr.aria-label]="'Page ' + (page + 1)"
+          [attr.aria-current]="page === pageIndex() ? 'page' : null"
+          (click)="pageChange.emit(page)"
+        >
+          {{ page + 1 }}
+        </button>
+      }
+
+      <button
+        type="button"
+        aria-label="Next page"
+        [class]="base + ' ' + idle"
+        [disabled]="pageIndex() >= pageCount() - 1"
+        (click)="pageChange.emit(pageIndex() + 1)"
+      >
+        <app-icon name="chevRight" [size]="16" />
+      </button>
+    </nav>
+  }
+</div>

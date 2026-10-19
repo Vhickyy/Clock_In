@@ -9,7 +9,7 @@
 
   <!-- Sidebar -->
   <aside
-    class="fixed md:relative inset-y-0 left-0 z-50 bg-white border-r border-border transition-all duration-300 ease-in-out flex flex-col h-screen"
+    class="fixed md:relative inset-y-0 left-0 z-50 bg-primary border-r border-border transition-all duration-300 ease-in-out flex flex-col h-screen"
     [class.w-16]="isCollapsed() && !isMobile()"
     [class.w-64]="!isCollapsed() || isMobile()"
     [class.-translate-x-full]="isMobile() && !sidebarOpen()"
@@ -46,12 +46,12 @@
         @for (item of navItems(); track item.route) {
           <a
             [routerLink]="item.route"
-            routerLinkActive="bg-primary-light text-primary border-primary-light"
+            routerLinkActive="bg-champagne text-primary-dark border-primary-light"
             [routerLinkActiveOptions]="{ exact: item.exact }"
-            class="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-muted hover:bg-background hover:text-text transition-all duration-200 border border-transparent"
+            class="group flex items-center gap-3 px-3 py-2.5 rounded-xl text-white hover:bg-background hover:text-text transition-all duration-200 border border-transparent"
             /* [title]="isCollapsed() && !isMobile() ? item.label : ''" */
           >
-            <div class="w-5 h-5 flex items-center justify-center shrink-0">
+            <div class="w-5 h-5 flex items-center justify-center shrink-0 text-inherit">
               <app-icon [name]="item.icon" [size]="18" [strokeWidth]="1.8" />
             </div>
 
@@ -79,14 +79,14 @@
         class="flex items-center gap-3 rounded-xl p-2 hover:bg-background transition-colors cursor-pointer"
       >
         <div
-          class="w-10 h-10 rounded-full bg-primary text-primary/700 flex items-center justify-center font-semibold shrink-0"
+          class="w-10 h-10 rounded-full bg-champagne text-primary/700 flex items-center justify-center font-semibold shrink-0"
         >
           V
         </div>
 
         @if (!isCollapsed() || isMobile()) {
           <div class="min-w-0 flex-1">
-            <p class="text-sm font-medium text-gray-900 truncate">Victoria</p>
+            <p class="text-sm font-medium text-white truncate">Victoria</p>
             <p class="text-xs text-gray-500 truncate">Administrator</p>
           </div>
         }

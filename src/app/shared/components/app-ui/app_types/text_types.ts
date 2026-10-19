@@ -31,3 +31,13 @@ export type TextVariantConfig = {
   tag: keyof HTMLElementTagNameMap;
   classes: string;
 };
+
+export interface Crumb {
+  label: string;
+  route?: string;
+}
+
+export interface SelectOption {
+  value: string;
+  label: string;
+}

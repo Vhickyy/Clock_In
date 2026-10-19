@@ -1,0 +1,45 @@
+<app-table
+  [data]="eventService.filteredEvents()"
+  [columns]="eventService.columns"
+  [pageSize]="6"
+  itemLabel="events"
+  [cellTemplates]="{
+    event: eventCell,
+    date: dateCell,
+    venue: venueCell,
+    invitations: invitationsCell,
+    rsvps: rsvpCell,
+    checkedIn: checkedInCell,
+    status: statusCell,
+    actions: actionsCell,
+  }"
+/>
+
+<!-- Cell templates: the Table stays generic, the page decides what each column looks like -->
+<ng-template #eventCell let-e>
+  <!-- <app-event-cell [event]="e" /> -->
+</ng-template>
+<ng-template #dateCell let-e>
+  <!-- <app-date-time-cell [value]="e.startsAt" /> -->
+</ng-template>
+<ng-template #venueCell let-e>
+  <app-text variant="tableCellMuted" className="block max-w-36" [text]="e.venue" />
+</ng-template>
+<ng-template #invitationsCell let-e>
+  <app-text variant="listValue" [text]="'' + e.invitations" />
+</ng-template>
+<ng-template #rsvpCell let-e>
+  <!-- <app-metric-cell [value]="e.rsvps" [total]="e.invitations" /> -->
+</ng-template>
+<ng-template #checkedInCell let-e>
+  <!-- <app-metric-cell [value]="e.checkedIn" [total]="e.invitations" /> -->
+</ng-template>
+<ng-template #statusCell let-e>
+  <!-- <app-status-badge [label]="e.status" [tone]="statusTone[e.status]" /> -->
+</ng-template>
+<ng-template #actionsCell let-e>
+  <app-events-action-menu
+    [label]="'Actions for ' + e.name"
+    (action)="eventService.onRowAction($event, e)"
+  />
+</ng-template>
