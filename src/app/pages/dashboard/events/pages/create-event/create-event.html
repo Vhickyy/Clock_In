@@ -1,1 +1,75 @@
-<p>create-event works!</p>
+<div class="flex flex-col gap-6">
+  <!-- <app-page-header title="Create a New Event" [subtitle]="meta().subtitle" [crumbs]="crumbs">
+        <div
+          slot="action"
+          class="inline-flex items-center gap-2 rounded-full border border-champagne/60 bg-champagne-light px-4 py-2 text-primary"
+        >
+          <app-icon name="building" [size]="16" />
+          <span class="font-body text-xs font-semibold">Creating in {{ org.current().name }}</span>
+        </div>
+      </app-page-header> -->
+
+  <app-stepper
+    [steps]="createEventService.steps"
+    [current]="createEventService.step()"
+    [furthest]="createEventService.furthest()"
+    (stepSelected)="goTo($event)"
+  />
+
+  <form
+    novalidate
+    class="rounded-2xl border border-border bg-surface/80 p-6 shadow-sm sm:p-8"
+    (submit)="onSubmit($event)"
+  >
+    <h2
+      #heading
+      tabindex="-1"
+      class="mb-6 font-heading text-xl font-semibold text-text outline-none md:text-2xl"
+    >
+      {{ meta().heading }}
+    </h2>
+
+    @switch (createEventService.step()) {
+      @case (0) {
+        <app-event-details-step />
+      }
+      @case (1) {
+        <app-access-rules-step />
+      }
+      @case (2) {
+        <app-invitations-step />
+      }
+      @case (3) {
+        <app-preview-step />
+      }
+    }
+
+    <footer class="mt-8 flex items-center justify-between gap-3 border-t border-border pt-6">
+      <!-- @if (createEventService.step() === 0) {
+        <app-button
+          [textProps]="{ text: 'Cancel', variant: 'buttonText' }"
+          [iconProps]="{ name: 'arrowLeft', size: 16 }"
+          /* [btnClass]="outline" */
+          (click)="cancel()"
+        />
+      } @else {
+        <app-button
+          [textProps]="{ text: 'Back', variant: 'buttonText' }"
+          [iconProps]="{ name: 'arrowLeft', size: 16 }"
+          /* [btnClass]="outline" */
+          (click)="back()"
+        />
+      } -->
+
+      <!-- type="submit": Enter in a field continues, and the form handles both next and create -->
+      <!-- <app-button
+        type="submit"
+        [textProps]="{ text: meta().next, variant: 'buttonText' }"
+        [iconProps]="createEventService.isLastStep() ? { name: 'calendar', size: 16 } : undefined"
+        /* [btnClass]="primary" */
+        [loading]="createEventService.submitting()"
+        [disabled]="createEventService.submitting()"
+      /> -->
+    </footer>
+  </form>
+</div>

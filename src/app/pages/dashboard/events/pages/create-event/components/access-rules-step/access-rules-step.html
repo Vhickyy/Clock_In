@@ -1,0 +1,35 @@
+<!-- <app-notice icon="lock" title="Invitation only">
+      Only guests you invite can attend. Each invitation has its own unique QR code and access code.
+    </app-notice>
+
+    <app-form-section title="Guest limit" description="Optional. Cap how many guests can attend in total.">
+      <app-toggle-field
+        label="Limit total guests"
+        description="Turn off to allow any number of invited guests"
+        [field]="form.limitGuests"
+      /> -->
+@if (createEventService.model().limitGuests) {
+  <app-input
+    id="max-guests"
+    label="Maximum Guests"
+    type="number"
+    leftIcon="usersRound"
+    placeholder="e.g. 300"
+    [field]="form.maxGuests"
+  />
+}
+<!-- </app-form-section> -->
+
+<!-- <app-form-section title="Check-in settings" description="Choose how staff verify guests at the door.">
+      <app-toggle-field
+        label="QR code check-in"
+        description="Staff scan the QR code on each invitation"
+        [field]="form.checkInQr"
+      />
+      <app-toggle-field
+        label="Manual code entry"
+        description="Staff type the access code when a QR code can’t be scanned"
+        [field]="form.checkInManual"
+      />
+      <app-field-error [field]="form.checkInManual" [showUntouched]="true" />
+    </app-form-section> -->

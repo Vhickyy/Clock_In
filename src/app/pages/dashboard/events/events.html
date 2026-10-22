@@ -1,17 +1,16 @@
 <div class="flex flex-col gap-6">
   <div class="flex items-center justify-between gap-4">
     <div class="w-[50%]">
-      <app-text text="Events" variant="heading" />
-      <app-text
-        text="Create and manage all your events in one place. Track attendance, view details and keep your guests informed."
-      />
+      <h2 appText variant="heading">Events</h2>
+      <p appText variant="body">
+        Create and manage all your events in one place. Track attendance, view details and keep your
+        guests informed.
+      </p>
     </div>
-    <app-button
-      [textProps]="{ text: 'Create Event', variant: 'buttonText' }"
-      [iconProps]="{ name: 'plus', size: 18 }"
-      btnClass="px-6"
-      (click)="router.navigate(['/dashboard/events/new'])"
-    />
+    <button appButton btnClass="px-6" (click)="router.navigate(['/dashboard/events/new'])">
+      Create Event
+      <app-icon name="plus" 18 />
+    </button>
   </div>
 
   <section

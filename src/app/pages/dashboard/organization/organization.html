@@ -1,0 +1,95 @@
+<div class="flex">
+  <section class="flex-1 flex flex-col gap-8">
+    <div class="grid gap-4">
+      <app-dash-header
+        text="Choose Your Workspace"
+        subText="Manage your evebts, team memebers and guest list from one place. You can switch between organizations at anytime."
+      />
+      <button
+        appButton
+        btnClass="border px-6 py-2 flex-row-reverse w-fit"
+        [iconProps]="{ name: 'plus' }"
+        (click)="router.navigate(['/dashboard/organization/create'])"
+      >
+        Create Organization
+      </button>
+    </div>
+
+    <aside class="grid gap-4">
+      <h4 appText variant="subheading" class="font-extrabold">Your Organizations</h4>
+      <div class="grid gap-4">
+        @for (org of [1, 2, 3]; track org) {
+          <div
+            class="bg-white border-2 border-border p-6 rounded-xl flex justify-between items-center"
+          >
+            <div class="flex items-center gap-6">
+              <div class="bg-champagne-light w-fit p-2 rounded-xl">
+                <p appText variant="subheading" className="text-champagne lg:text-xl">VC</p>
+              </div>
+              <div>
+                <h5 appText variant="cardTitle">Vicky Platform</h5>
+                <p appText variant="pageSubtitle" className="md:text-sm">Event Planning</p>
+              </div>
+            </div>
+            <div>
+              <button appButton btnClass="bg-transparent text-champagne border px-6 py-1.5">
+                Switch
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </aside>
+
+    <aside class="grid gap-4">
+      <h4 appText variant="subheading" class="font-extrabold">Pending Invitations</h4>
+      <div class="grid grid-cols-2 gap-4">
+        @for (org of [1, 2, 3]; track org) {
+          <div
+            class="bg-white border-2 border-border p-6 rounded-xl flex justify-between items-center"
+          >
+            <div class="flex items-center gap-4">
+              <div class="bg-champagne-light text-champagne p-2 rounded-xl">
+                <app-icon name="usersRound" [size]="25" />
+              </div>
+              <div>
+                <h5 appText variant="cardTitle">Vicky Platform</h5>
+                <p appText variant="pageSubtitle" className="md:text-sm">Event Planning</p>
+              </div>
+            </div>
+            <div class="flex gap-2">
+              <button appButton btnClass="border px-4 py-1.5 bg-primary">Accept</button>
+              <button appButton btnClass="bg-transparent text-champagne border px-4 py-1.5">
+                Decline
+              </button>
+            </div>
+          </div>
+        }
+      </div>
+    </aside>
+  </section>
+
+  <div class="border border-border mx-8"></div>
+  <section class="w-[25%]">
+    <aside class="grid gap-4">
+      <h4 appText variant="subheading" class="font-extrabold">Your Organizations</h4>
+      <div class="grid gap-4">
+        @for (org of [1, 2, 3]; track org) {
+          <div
+            class="bg-white border-2 border-border p-6 rounded-xl flex justify-between items-center"
+          >
+            <div class="flex items-center gap-6">
+              <div class="bg-champagne-light w-fit p-2 rounded-xl">
+                <p appText variant="subheading" className="text-champagne">VC</p>
+              </div>
+              <div>
+                <h5 appText variant="cardTitle">Vicky Platform</h5>
+                <p appText variant="pageSubtitle" className="md:text-sm">Event Planning</p>
+              </div>
+            </div>
+          </div>
+        }
+      </div>
+    </aside>
+  </section>
+</div>

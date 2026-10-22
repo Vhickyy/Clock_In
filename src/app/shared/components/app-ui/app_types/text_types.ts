@@ -28,7 +28,6 @@ export interface BtnProps {
 // export type TextTag = 'h1' | 'h2' | 'h3' | 'h4' | 'p' | 'span' | 'label';
 
 export type TextVariantConfig = {
-  tag: keyof HTMLElementTagNameMap;
   classes: string;
 };
 

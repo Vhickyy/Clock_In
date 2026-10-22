@@ -1,6 +1,6 @@
 <section class="flex justify-between items-center ml-[5%] gap-20">
   <div class="grid gap-4 py-20 w-[40%]">
-    <app-text
+    <!-- <app-text
       variant="eyebrow"
       text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
       className="text-champagne"
@@ -23,9 +23,9 @@
       <app-button
         [textProps]="{ text: 'How It Works' }"
         btnClass="px-8 bg-transparent border border-primary text-primary"
-      />
-    </div>
+      /> -->
   </div>
+  <!-- </div> -->
   <img src="clock_in_hero.png" alt="Clock In Hero" class="w-[60%] object-cover h-full bg-primary" />
 </section>
 
@@ -35,15 +35,15 @@
       <div class="rounded-full p-4 border border-champagne w-fit">
         <app-icon name="users" [size]="25" />
       </div>
-      <app-text [text]="feat.title" variant="subheading" className="font-extrabold" />
-      <app-text [text]="feat.description" className="w-[70%]" />
+      <!-- <app-text [text]="feat.title" variant="subheading" className="font-extrabold" />
+      <app-text [text]="feat.description" className="w-[70%]" /> -->
     </div>
   }
 </section>
 
 <section class="flex justify-between items-center containerClass gap-8">
   <div class="grid gap-4 py-20 w-[40%]">
-    <app-text
+    <!-- <app-text
       variant="eyebrow"
       text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
       className="text-champagne"
@@ -61,14 +61,14 @@
       [textProps]="{ text: 'Learn More' }"
       btnClass="px-8 rounded-full w-fit"
       [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
-    />
+    /> -->
   </div>
   <div class="grid grid-cols-3 gap-4 w-[70%]">
     @for (item of howItWorks; track $index) {
       <div class="flex gap-4 items-center py-4">
         <div class="grid gap-2">
-          <app-text [text]="item.title" variant="subheading" className="font-extrabold" />
-          <app-text [text]="item.description" />
+          <!-- <app-text [text]="item.title" variant="subheading" className="font-extrabold" />
+          <app-text [text]="item.description" /> -->
         </div>
       </div>
     }
@@ -78,7 +78,7 @@
 <section class="bg-primary">
   <div class="containerClass flex justify-between items-center gap-8">
     <div class="grid gap-4 py-20 w-[40%]">
-      <app-text
+      <!-- <app-text
         variant="eyebrow"
         text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
         className="text-champagne"
@@ -96,14 +96,14 @@
         [textProps]="{ text: 'Learn More' }"
         btnClass="px-8 rounded-full w-fit"
         [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
-      />
+      /> -->
     </div>
     <div class="grid grid-cols-3 gap-4 w-[70%]">
       @for (item of howItWorks; track $index) {
         <div class="flex gap-4 items-center py-4">
           <div class="grid gap-2">
-            <app-text [text]="item.title" variant="subheading" className="font-extrabold" />
-            <app-text [text]="item.description" />
+            <!-- <app-text [text]="item.title" variant="subheading" className="font-extrabold" />
+            <app-text [text]="item.description" /> -->
           </div>
         </div>
       }

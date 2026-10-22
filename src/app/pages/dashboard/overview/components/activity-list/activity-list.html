@@ -12,16 +12,16 @@
           class="flex w-full items-center gap-3 py-3 text-left transition hover:bg-background/60"
         >
           <!-- <app-icon-bubble [icon]="item.icon" [tone]="item.tone" size="sm" /> -->
-          <span class="min-w-0 flex-1">
+          <!-- <span class="min-w-0 flex-1">
             <app-text variant="listTitle" className="text-xs" [text]="item.title" />
             <app-text variant="listSubtitle" className="truncate" [text]="item.description" />
           </span>
-          <app-text variant="timestamp" className="shrink-0" [text]="item.time" />
+          <app-text variant="timestamp" className="shrink-0" [text]="item.time" /> -->
           <app-icon name="chevRight" [size]="14" className="text-muted" />
         </button>
       </li>
     } @empty {
-      <app-text variant="emptyState" text="No recent activity yet." />
+      <!-- <app-text variant="emptyState" text="No recent activity yet." /> -->
     }
   </ul>
 </app-section-card>

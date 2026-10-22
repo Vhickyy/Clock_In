@@ -1,19 +1,18 @@
 <header>
   <nav class="containerClass flex items-center justify-between py-5">
-    <app-text variant="eyebrow" text="CLOCK IN GUEST" />
+    <p appText variant="eyebrow">CLOCK IN GUEST</p>
 
     <div class="flex gap-10">
       @for (item of [1, 2, 3, 4]; track item) {
-        <app-text variant="body" text="Menu Item" />
+        <p appText>Menu Item</p>
       }
     </div>
 
     <div class="flex gap-4">
-      <app-button
-        [textProps]="{ text: 'Log In' }"
-        btnClass="px-8 bg-transparent border border-champagne text-champagne"
-      />
-      <app-button [textProps]="{ text: 'Get Started' }" btnClass="px-8" />
+      <button appButton btnClass="px-8 bg-transparent border border-champagne text-champagne">
+        Log In
+      </button>
+      <button appButton btnClass="px-8">Get Started</button>
     </div>
   </nav>
 </header>

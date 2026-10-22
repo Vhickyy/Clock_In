@@ -1,0 +1,51 @@
+<div class="flex flex-col gap-2">
+  <span class="font-body text-sm font-medium text-text">{{ label() }}</span>
+
+  @if (previewUrl(); as url) {
+    <div class="relative overflow-hidden rounded-xl border border-border">
+      <img [src]="url" alt="Cover image preview" class="aspect-4/3 w-full object-cover" />
+      <button
+        type="button"
+        aria-label="Remove cover image"
+        class="absolute right-2 top-2 grid size-8 place-items-center rounded-full bg-surface/90 text-text shadow transition hover:bg-surface"
+        (click)="removed.emit()"
+      >
+        <app-icon name="x" [size]="16" />
+      </button>
+    </div>
+  } @else {
+    <button
+      type="button"
+      class="flex aspect-4/3 w-full flex-col items-center justify-center gap-2 rounded-xl border border-dashed px-4 text-center transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne-dark"
+      [class]="
+        dragging()
+          ? 'border-champagne-dark bg-champagne-light'
+          : 'border-border bg-surface hover:border-champagne-dark/60'
+      "
+      (click)="picker.click()"
+      (dragover)="onDragOver($event)"
+      (dragleave)="dragging.set(false)"
+      (drop)="onDrop($event)"
+    >
+      <span
+        class="grid size-10 place-items-center rounded-full bg-champagne-light text-champagne-dark"
+      >
+        <app-icon name="imagePlus" [size]="20" />
+      </span>
+      <span class="font-body text-sm font-medium text-text">Add a cover image</span>
+      <span class="font-body text-xs text-muted">{{ hint() }}</span>
+    </button>
+  }
+
+  <input
+    #picker
+    type="file"
+    class="hidden"
+    accept="image/png,image/jpeg,image/webp"
+    (change)="onPick($event, picker)"
+  />
+
+  @if (error(); as message) {
+    <p appText variant="formError">{{ message }}</p>
+  }
+</div>

@@ -19,11 +19,12 @@
   >
     @if (title()) {
       <div class="flex items-center justify-between">
-        <app-text variant="sectionTitle" [text]="title()" />
-        <app-button />
+        <p appText variant="sectionTitle">{{ title() }}</p>
+
         <button
+          appButton
           (click)="close.emit()"
-          class="w-8 h-8 rounded-lg hover:bg-background flex items-center justify-center"
+          /* class="w-8 h-8 rounded-lg hover:bg-background flex items-center justify-center" */
         >
           <app-icon name="xCircle" />
         </button>

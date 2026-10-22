@@ -23,10 +23,10 @@
   <!-- <app-date-time-cell [value]="e.startsAt" /> -->
 </ng-template>
 <ng-template #venueCell let-e>
-  <app-text variant="tableCellMuted" className="block max-w-36" [text]="e.venue" />
+  <p appText variant="tableCellMuted">{{ e.venue }}</p>
 </ng-template>
 <ng-template #invitationsCell let-e>
-  <app-text variant="listValue" [text]="'' + e.invitations" />
+  <!-- <p appText variant="listValue">{{ e.invitations }}</p> -->
 </ng-template>
 <ng-template #rsvpCell let-e>
   <!-- <app-metric-cell [value]="e.rsvps" [total]="e.invitations" /> -->

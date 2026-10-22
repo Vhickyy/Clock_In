@@ -43,6 +43,7 @@ export class Sidebar {
   }
 
   navItems = signal<NavItem[]>([
+    { label: 'Organization', route: '/dashboard/organization', icon: 'building', exact: false },
     { label: 'Dashboard', route: '/dashboard', icon: 'home', exact: true },
     { label: 'Events', route: '/dashboard/events', icon: 'calendar', exact: false },
     { label: 'Invitations', route: '/dashboard/invitations', icon: 'fileText', exact: true },

@@ -25,3 +25,9 @@ export interface MenuEntry {
   icon: IconName;
   danger?: boolean;
 }
+
+export interface SummaryGroup {
+  title: string;
+  step: number; // which step the Edit link jumps to
+  rows: { label: string; value: string }[];
+}

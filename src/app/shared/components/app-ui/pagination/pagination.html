@@ -1,5 +1,5 @@
 <div class="flex items-center justify-between mt-6">
-  <app-text variant="listMeta" className="text-xs" [text]="summary()" />
+  <p appText variant="listMeta" className="text-xs">{{ summary() }}</p>
 
   @if (pageCount() > 1) {
     <nav class="flex items-center gap-2" aria-label="Pagination">

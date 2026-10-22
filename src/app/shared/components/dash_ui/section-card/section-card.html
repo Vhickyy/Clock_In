@@ -6,7 +6,7 @@
           <app-icon [name]="iconName" [size]="18" [strokeWidth]="1.8" />
         </div>
       }
-      <app-text variant="sectionTitle" className="md:text-lg" [text]="title()" />
+      <!-- <app-text variant="sectionTitle" className="md:text-lg" [text]="title()" /> -->
     </div>
 
     @if (actionLabel(); as label) {
@@ -18,11 +18,11 @@
         <app-text variant="sectionAction" className="text-coral" [text]="label" />
         <app-icon name="arrowRight" [size]="12" />
       </button> -->
-      <app-button
+      <!-- <app-button
         [textProps]="{ text: label }"
         [iconProps]="{ name: 'arrowRight', size: 12 }"
         (click)="actionClick.emit()"
-      />
+      /> -->
     }
     <ng-content select="[slot=action]" />
   </header>

@@ -1,0 +1,58 @@
+<div class="flex flex-col gap-5">
+  <app-input
+    id="event-name"
+    label="Event Name"
+    placeholder="e.g. Sarah & John’s Wedding"
+    [field]="form.name"
+  />
+
+  <!-- <app-select-field
+        id="event-type"
+        label="Event Type"
+        placeholder="Select event type"
+        [options]="typeOptions"
+        [field]="form.type"
+      />
+
+      <app-textarea-field
+        id="event-description"
+        label="Description"
+        placeholder="Tell your guests more about the event..."
+        [field]="form.description"
+      /> -->
+
+  <div class="grid gap-5 sm:grid-cols-2">
+    <app-input
+      id="event-date"
+      label="Event Date"
+      type="date"
+      leftIcon="calendar"
+      placeholder=""
+      [field]="form.date"
+    />
+    <app-input
+      id="event-time"
+      label="Event Time"
+      type="time"
+      leftIcon="clock"
+      placeholder=""
+      [field]="form.time"
+    />
+  </div>
+
+  <app-input
+    id="event-venue"
+    label="Venue"
+    placeholder="e.g. The Grand Hall, Lagos"
+    leftIcon="mapPin"
+    [field]="form.venue"
+  />
+</div>
+
+<aside>
+  <app-image-upload
+    [previewUrl]="createEventService.coverUrl()"
+    (selected)="createEventService.setCover($event)"
+    (removed)="createEventService.clearCover()"
+  />
+</aside>

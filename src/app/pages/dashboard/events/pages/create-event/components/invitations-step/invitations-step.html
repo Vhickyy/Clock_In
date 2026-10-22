@@ -1,0 +1,45 @@
+<!-- <app-form-section title="Invitation type" description="The default for new invitations on this event.">
+      <app-option-cards-field legend="Invitation type" [options]="options" [field]="form.invitationType" /> -->
+
+@if (createEventService.model().invitationType === 'family') {
+  <app-input
+    id="guests-per-invitation"
+    label="Guests per family invitation"
+    type="number"
+    leftIcon="usersRound"
+    placeholder="e.g. 4"
+    [field]="form.guestsPerInvitation"
+  />
+} @else {
+  <p appText variant="formLabel">{{ capacityHint() }}</p>
+}
+<!-- </app-form-section> -->
+
+<!-- <app-form-section title="RSVP settings">
+      <app-toggle-field
+        label="Require RSVP"
+        description="Guests confirm attendance before the event"
+        [field]="form.requireRsvp"
+      /> -->
+@if (createEventService.model().requireRsvp) {
+  <!-- <app-toggle-field
+          label="Set RSVP deadline"
+          description="Stop accepting RSVPs after a date"
+          [field]="form.setRsvpDeadline"
+        /> -->
+  @if (createEventService.model().setRsvpDeadline) {
+    <app-input
+      id="rsvp-deadline"
+      label="RSVP Deadline"
+      type="date"
+      leftIcon="calendar"
+      placeholder=""
+      [field]="form.rsvpDeadline"
+    />
+  }
+}
+<!-- </app-form-section> -->
+
+<!-- <app-notice>
+      These are defaults for this event. You’ll add guests and send invitations after the event is created.
+    </app-notice> -->

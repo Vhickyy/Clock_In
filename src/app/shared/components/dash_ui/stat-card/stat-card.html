@@ -1,15 +1,13 @@
 <article
   class="flex h-full items-center gap-4 rounded-2xl border border-border bg-surface/90 p-5 shadow-sm"
 >
-  <!-- <app-icon-bubble [icon]="icon()" [tone]="tone()" size="lg" /> -->
-
   <div class="min-w-0">
-    <app-text variant="cardLabel" className="text-text" [text]="label()" />
-    <app-text variant="cardValue" className="my-1" [text]="displayValue()" />
+    <p variant="cardTitle" appText className="text-text">{{ label() }}</p>
+    <p variant="cardValue" appText className="text-text">{{ displayValue() }}</p>
     @if (trend(); as trendText) {
       <div class="flex items-center gap-1 text-green">
         <app-icon name="arrowUp" [size]="12" />
-        <app-text variant="cardTrend" className="text-muted" [text]="trendText" />
+        <p variant="cardTrend" appText className="text-text">{{ trendText }}</p>
       </div>
     }
   </div>

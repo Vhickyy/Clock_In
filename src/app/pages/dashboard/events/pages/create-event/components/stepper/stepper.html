@@ -1,0 +1,60 @@
+<nav aria-label="Progress">
+  <ol class="flex items-start">
+    @for (step of steps(); track step.label; let i = $index; let last = $last) {
+      @let state = states()[i];
+      <li class="relative flex flex-1 flex-col items-center gap-2">
+        @if (!last) {
+          <span
+            aria-hidden="true"
+            class="absolute left-1/2 top-4 w-full border-t border-dashed"
+            [class]="i < furthest() ? 'border-champagne-dark' : 'border-border'"
+          ></span>
+        }
+
+        <button
+          type="button"
+          class="relative z-10 grid size-8 place-items-center rounded-full border text-xs font-bold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne-dark focus-visible:ring-offset-2 disabled:cursor-default"
+          [class]="circle[state]"
+          [disabled]="i > furthest()"
+          [attr.aria-current]="state === 'current' ? 'step' : null"
+          [attr.aria-label]="
+            step.label +
+            (state === 'done' ? ' (completed)' : state === 'current' ? ' (current step)' : '')
+          "
+          (click)="stepSelected.emit(i)"
+        >
+          @if (state === 'done') {
+            <app-icon name="check" [size]="16" [strokeWidth]="3" />
+          } @else {
+            {{ i + 1 }}
+          }
+        </button>
+        <!-- @if (state === 'done') {
+          <app-button
+            btnClass="relative z-10 grid size-8 place-items-center rounded-full border text-xs font-bold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne-dark focus-visible:ring-offset-2 disabled:cursor-default"
+            [iconProps]="{ name: 'check', size: 16, strokeWidth: 3 }"
+            (click)="stepSelected.emit(i)"
+            [disabled]="i > furthest()"
+            [attr.aria-label]="
+              step.label +
+              (state === 'done' ? ' (completed)' : state === 'current' ? ' (current step)' : '')
+            "
+          />
+        } @else {
+          <app-button
+            btnClass="relative z-10 grid size-8 place-items-center rounded-full border text-xs font-bold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne-dark focus-visible:ring-offset-2 disabled:cursor-default"
+            [textProps]="{ text: (i + 1).toString() }"
+            (click)="stepSelected.emit(i)"
+          />
+        } -->
+
+        <span
+          class="font-body text-xs"
+          [class]="state === 'current' ? 'font-semibold text-text' : 'text-muted'"
+        >
+          {{ step.label }}
+        </span>
+      </li>
+    }
+  </ol>
+</nav>
