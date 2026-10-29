@@ -38,16 +38,16 @@ export class EventsService {
     });
   });
 
-  EVENT_COLUMNS: ColumnDef<EventRow>[] = [
-    { id: 'event', accessorKey: 'name', header: 'Event' },
-    { id: 'date', accessorKey: 'startsAt', header: 'Date & Time' },
-    { accessorKey: 'venue', header: 'Venue' },
-    { accessorKey: 'invitations', header: 'Invitations' },
-    { accessorKey: 'rsvps', header: 'RSVPs' },
-    { accessorKey: 'checkedIn', header: 'Checked In' },
-    { accessorKey: 'status', header: 'Status' },
-    { id: 'actions', header: 'Actions' },
-  ];
+  // EVENT_COLUMNS: ColumnDef<EventRow>[] = [
+  //   { id: 'event', accessorKey: 'name', header: 'Event' },
+  //   { id: 'date', accessorKey: 'startsAt', header: 'Date & Time' },
+  //   { accessorKey: 'venue', header: 'Venue' },
+  //   { accessorKey: 'invitations', header: 'Invitations' },
+  //   { accessorKey: 'rsvps', header: 'RSVPs' },
+  //   { accessorKey: 'checkedIn', header: 'Checked In' },
+  //   { accessorKey: 'status', header: 'Status' },
+  //   { id: 'actions', header: 'Actions' },
+  // ];
 
   onRowAction(action: RowAction, event: EventRow): void {
     switch (action) {

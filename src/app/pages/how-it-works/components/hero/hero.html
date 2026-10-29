@@ -1,24 +1,22 @@
 <section class="flex justify-between items-center bg-white gap-8 border-t border-champagne">
   <div class="grid gap-4 py-20 w-[30%] ml-[5%]">
-    <!-- <app-text
-      variant="eyebrow"
-      text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
-      className="text-champagne"
-    />
-    <app-text
-      variant="hero"
-      text="From Invitation to Check-In In 3 Simple Steps."
-      className="font-heading leading-none"
-    />
-    <app-text
-      text="Every event has its own way of doing things. Clock In Guest gives organizers the flexibility to choose how invited guests are verified at the door."
-      className="py-4"
-    />
-    <app-button
-      [textProps]="{ text: 'Learn More' }"
+    <span appText variant="eyebrow" className="text-champagne bg-champagne-light">
+      EXCLUSIVE ACCESS. SEAMLESS ENTRY.
+    </span>
+    <h2 appText variant="hero" className="font-heading leading-none">
+      From Invitation to Check-In In 3 Simple Steps.
+    </h2>
+    <p appText className="py-4">
+      Every event has its own way of doing things. Clock In Guest gives organizers the flexibility
+      to choose how invited guests are verified at the door.
+    </p>
+    <button
+      appButton
       btnClass="px-8 rounded-full w-fit"
       [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
-    /> -->
+    >
+      Learn More
+    </button>
   </div>
   <img src="clock_in_hero.png" alt="Clock In Hero" class="w-[60%] object-cover h-full bg-primary" />
 </section>

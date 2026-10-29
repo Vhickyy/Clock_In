@@ -118,6 +118,7 @@ export const EVENTS: EventRow[] = [
     rsvps: 378,
     checkedIn: 312,
     status: 'Upcoming',
+    guests: 300,
   },
   {
     id: '2',
@@ -130,6 +131,7 @@ export const EVENTS: EventRow[] = [
     rsvps: 98,
     checkedIn: 68,
     status: 'Upcoming',
+    guests: 300,
   },
   {
     id: '3',
@@ -142,6 +144,7 @@ export const EVENTS: EventRow[] = [
     rsvps: 245,
     checkedIn: 198,
     status: 'Ongoing',
+    guests: 400,
   },
   {
     id: '4',
@@ -154,6 +157,7 @@ export const EVENTS: EventRow[] = [
     rsvps: 167,
     checkedIn: 142,
     status: 'Ongoing',
+    guests: 400,
   },
   {
     id: '5',
@@ -166,6 +170,7 @@ export const EVENTS: EventRow[] = [
     rsvps: 432,
     checkedIn: 388,
     status: 'Completed',
+    guests: 1000,
   },
   {
     id: '6',
@@ -178,10 +183,11 @@ export const EVENTS: EventRow[] = [
     rsvps: 112,
     checkedIn: 95,
     status: 'Completed',
+    guests: 1000,
   },
   {
     id: '7',
-    name: 'Chidi & Ngozi’s Anniversary',
+    name: "Chidi & Ngozi's Anniversary",
     category: 'Anniversary',
     image: 'images/event-dinner.jpg',
     startsAt: '2025-07-19T17:00:00',
@@ -190,6 +196,7 @@ export const EVENTS: EventRow[] = [
     rsvps: 150,
     checkedIn: 0,
     status: 'Upcoming',
+    guests: 300,
   },
   {
     id: '8',
@@ -202,5 +209,6 @@ export const EVENTS: EventRow[] = [
     rsvps: 190,
     checkedIn: 0,
     status: 'Upcoming',
+    guests: 300,
   },
 ];

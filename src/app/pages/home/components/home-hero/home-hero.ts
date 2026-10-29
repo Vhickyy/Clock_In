@@ -13,19 +13,22 @@ export class HomeHero {
   features = [
     {
       title: 'Secure Access',
-      description: 'Only invited guests can enter using QR codes or unique access codes.',
+      description:
+        'Every QR code belongs to one invitation. Revoked or reused codes are refused at the door, instantly.',
     },
     {
       title: 'Flexible Invitations',
-      description: "Invite individuals, couples, or groups — it's up to you.",
+      description:
+        'Staff phones keep scanning when venue signal drops, then sync as soon as it returns.',
     },
     {
       title: 'Real-Time Check-In',
-      description: "Track attendance and see who's arrived, instantly.",
+      description: 'Individuals, couples, families and +1s, sent by WhatsApp, SMS or email.',
     },
     {
       title: 'Easy for Your Guests',
-      description: 'A simple, beautiful experience from invitation to check-in.',
+      description:
+        'Guests open their invitation link and show the code. There is nothing to download.',
     },
   ];
 

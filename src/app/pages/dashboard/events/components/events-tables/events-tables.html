@@ -17,6 +17,13 @@
 
 <!-- Cell templates: the Table stays generic, the page decides what each column looks like -->
 <ng-template #eventCell let-e>
+  <div class="flex items-center gap-4">
+    <img src="clock_in_hero.png" alt="hero" class="w-16 h-16 rounded-lg object-cover" />
+    <div>
+      <h3 appText variant="cardTitle">{{ e.name }}</h3>
+      <p appText variant="cardValue" class="uppercase">corporate</p>
+    </div>
+  </div>
   <!-- <app-event-cell [event]="e" /> -->
 </ng-template>
 <ng-template #dateCell let-e>

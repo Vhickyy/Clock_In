@@ -1,50 +1,49 @@
 <app-hero />
 <app-process />
+
 <section class="flex justify-between items-center gap-20 bg-white pb-2">
   <img src="clock_in_hero.png" alt="Clock In Hero" class="w-[50%] object-cover h-full bg-primary" />
   <div class="grid gap-4 py-20 w-[50%] mr-[5%]">
-    <!-- <app-text variant="eyebrow" text="BUILD FOR ALL KIND OF EVENT." className="text-champagne" />
-    <app-text
-      variant="heading"
-      text="More Than Just Invitations."
-      className="font-heading leading-none"
-    />
-    <app-text
-      text="Every event has its own way of doing things. Clock In Guest gives organizers the flexibility to choose how invited guests are verified at the door."
-    /> -->
+    <span appText variant="eyebrow" className="text-champagne"> BUILD FOR ALL KIND OF EVENT. </span>
+    <h2 appText variant="heading" className="font-heading leading-none">
+      More Than Just Invitations.
+    </h2>
+    <p appText>
+      Every event has its own way of doing things. Clock In Guest gives organizers the flexibility
+      to choose how invited guests are verified at the door.
+    </p>
   </div>
 </section>
 
 <section class="bg-primary">
   <div class="containerClass flex justify-between items-center gap-8">
     <div class="grid gap-4 py-20 w-[40%]">
-      <!-- <app-text
-        variant="eyebrow"
-        text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
-        className="text-champagne"
-      />
-      <app-text
-        variant="heading"
-        text="Any Event. Any Occasion."
-        className="font-heading leading-none text-white"
-      />
-      <app-text
-        text="Whether it's a wedding, birthday, or corporate event, Clock In Guest makes it easy to manage guest verification and create a seamless experience for everyone involved."
-        className="py-4 text-white"
-      />
-      <app-button
-        [textProps]="{ text: 'Learn More' }"
+      <span appText variant="eyebrow" className="text-champagne">
+        EXCLUSIVE ACCESS. SEAMLESS ENTRY.
+      </span>
+      <h2 appText variant="heading" className="font-heading leading-none text-white">
+        Any Event. Any Occasion.
+      </h2>
+      <p appText className="py-4 text-white">
+        Whether it's a wedding, birthday, or corporate event, Clock In Guest makes it easy to manage
+        guest verification and create a seamless experience for everyone involved.
+      </p>
+      <button
+        appButton
         btnClass="px-8 rounded-full w-fit"
         [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
-      /> -->
+      >
+        Learn More
+      </button>
     </div>
+
     <div class="grid grid-cols-3 gap-4 w-[70%]">
       @for (item of howItWorks; track $index) {
         <div class="flex gap-4 items-center py-4">
-          <!-- <div class="grid gap-2">
-            <app-text [text]="item.title" variant="subheading" className="font-extrabold" />
-            <app-text [text]="item.description" />
-          </div> -->
+          <div class="grid gap-2">
+            <h3 appText variant="subheading" className="font-extrabold">{{ item.title }}</h3>
+            <p appText>{{ item.description }}</p>
+          </div>
         </div>
       }
     </div>

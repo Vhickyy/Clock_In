@@ -2,17 +2,17 @@
   <nav class="containerClass flex items-center justify-between py-5">
     <p appText variant="eyebrow">CLOCK IN GUEST</p>
 
-    <div class="flex gap-10">
+    <ul class="flex gap-10">
       @for (item of [1, 2, 3, 4]; track item) {
-        <p appText>Menu Item</p>
+        <li appText>Menu Item</li>
       }
-    </div>
+    </ul>
 
     <div class="flex gap-4">
       <button appButton btnClass="px-8 bg-transparent border border-champagne text-champagne">
         Log In
       </button>
-      <button appButton btnClass="px-8">Get Started</button>
+      <button appButton btnClass="px-8 flex-1">Get Started</button>
     </div>
   </nav>
 </header>

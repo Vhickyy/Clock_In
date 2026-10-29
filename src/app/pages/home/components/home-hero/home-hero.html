@@ -1,32 +1,40 @@
-<section class="flex justify-between items-center ml-[5%] gap-20">
-  <div class="grid gap-4 py-20 w-[40%]">
-    <!-- <app-text
+<section class="flex justify-between items-center ml-[5%] gap-20 relative">
+  <div class="grid gap-4 py-28 w-[40%]">
+    <span
+      appText
       variant="eyebrow"
-      text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
-      className="text-champagne"
-    />
-    <app-text
-      variant="hero"
-      text="The Smarter Way to Manage Your Invited Guests."
-      className="font-heading leading-none"
-    />
-    <app-text
-      text="Every event has its own way of doing things. Clock In Guest gives organizers the flexibility to choose how invited guests are verified at the door."
-      className="py-4"
-    />
+      className="text-champagne bg-champagne-light w-fit rounded-full py-1 px-4"
+    >
+      EXCLUSIVE ACCESS. SEAMLESS ENTRY.
+    </span>
+    <h1 appText variant="hero" className="font-heading leading-none">
+      The Smarter Way to Manage Your Invited Guests.
+    </h1>
+
+    <p appText className="py-4">
+      Every event has its own way of doing things. Clock In Guest gives organizers the flexibility
+      to choose how invited guests are verified at the door.
+    </p>
+
     <div class="flex gap-4">
-      <app-button
-        [textProps]="{ text: 'Get Started' }"
+      <button
+        appButton
         btnClass="px-8 bg-primary"
         [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
-      />
-      <app-button
-        [textProps]="{ text: 'How It Works' }"
-        btnClass="px-8 bg-transparent border border-primary text-primary"
-      /> -->
+      >
+        Get Started
+      </button>
+
+      <button appButton btnClass="px-8 bg-transparent border border-primary text-primary">
+        How It Works
+      </button>
+    </div>
   </div>
-  <!-- </div> -->
-  <img src="clock_in_hero.png" alt="Clock In Hero" class="w-[60%] object-cover h-full bg-primary" />
+  <img
+    src="clock_in_hero.png"
+    alt="Clock In Hero"
+    class="h-full w-full object-cover md:absolute md:right-0 md:top-0 md:h-full md:w-[58%] md:[clip-path:polygon(105px_0,100%_0,100%_100%,0_100%)]"
+  />
 </section>
 
 <section class="containerClass flex justify-between py-30">
@@ -35,40 +43,41 @@
       <div class="rounded-full p-4 border border-champagne w-fit">
         <app-icon name="users" [size]="25" />
       </div>
-      <!-- <app-text [text]="feat.title" variant="subheading" className="font-extrabold" />
-      <app-text [text]="feat.description" className="w-[70%]" /> -->
+      <h3 appText variant="subheading" className="font-extrabold">{{ feat.title }}</h3>
+      <p appText className="w-[70%]">{{ feat.description }}</p>
     </div>
   }
 </section>
 
 <section class="flex justify-between items-center containerClass gap-8">
   <div class="grid gap-4 py-20 w-[40%]">
-    <!-- <app-text
-      variant="eyebrow"
-      text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
-      className="text-champagne"
-    />
-    <app-text
-      variant="heading"
-      text="From Invitation to Check-In In 3 Simple Steps."
-      className="font-heading leading-none"
-    />
-    <app-text
-      text="Every event has its own way of doing things. Clock In Guest gives organizers the flexibility to choose how invited guests are verified at the door."
-      className="py-4"
-    />
-    <app-button
-      [textProps]="{ text: 'Learn More' }"
+    <span appText variant="eyebrow" className="text-champagne">
+      EXCLUSIVE ACCESS. SEAMLESS ENTRY.
+    </span>
+
+    <h2 appText variant="heading" className="font-heading leading-none">
+      From Invitation to Check-In In 3 Simple Steps.
+    </h2>
+
+    <p appText className="py-4">
+      Every event has its own way of doing things. Clock In Guest gives organizers the flexibility
+      to choose how invited guests are verified at the door.
+    </p>
+
+    <button
+      appButton
       btnClass="px-8 rounded-full w-fit"
       [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
-    /> -->
+    >
+      Learn More
+    </button>
   </div>
   <div class="grid grid-cols-3 gap-4 w-[70%]">
     @for (item of howItWorks; track $index) {
       <div class="flex gap-4 items-center py-4">
         <div class="grid gap-2">
-          <!-- <app-text [text]="item.title" variant="subheading" className="font-extrabold" />
-          <app-text [text]="item.description" /> -->
+          <h3 appText variant="subheading" className="font-extrabold">{{ item.title }}</h3>
+          <p appText>{{ item.description }}</p>
         </div>
       </div>
     }
@@ -78,32 +87,33 @@
 <section class="bg-primary">
   <div class="containerClass flex justify-between items-center gap-8">
     <div class="grid gap-4 py-20 w-[40%]">
-      <!-- <app-text
-        variant="eyebrow"
-        text="EXCLUSIVE ACCESS. SEAMLESS ENTRY."
-        className="text-champagne"
-      />
-      <app-text
-        variant="heading"
-        text="Any Event. Any Occasion."
-        className="font-heading leading-none text-white"
-      />
-      <app-text
-        text="Whether it's a wedding, birthday, or corporate event, Clock In Guest makes it easy to manage guest verification and create a seamless experience for everyone involved."
-        className="py-4 text-white"
-      />
-      <app-button
-        [textProps]="{ text: 'Learn More' }"
+      <span appText variant="eyebrow" className="text-champagne">
+        EXCLUSIVE ACCESS. SEAMLESS ENTRY.
+      </span>
+
+      <h2 appText variant="heading" className="font-heading leading-none text-white">
+        Any Event. Any Occasion.
+      </h2>
+
+      <p appText className="py-4 text-white">
+        Whether it's a wedding, birthday, or corporate event, Clock In Guest makes it easy to manage
+        guest verification and create a seamless experience for everyone involved.
+      </p>
+
+      <button
+        appButton
         btnClass="px-8 rounded-full w-fit"
         [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
-      /> -->
+      >
+        Learn More
+      </button>
     </div>
     <div class="grid grid-cols-3 gap-4 w-[70%]">
       @for (item of howItWorks; track $index) {
         <div class="flex gap-4 items-center py-4">
           <div class="grid gap-2">
-            <!-- <app-text [text]="item.title" variant="subheading" className="font-extrabold" />
-            <app-text [text]="item.description" /> -->
+            <h3 appText variant="subheading" className="font-extrabold">{{ item.title }}</h3>
+            <p appText>{{ item.description }}</p>
           </div>
         </div>
       }

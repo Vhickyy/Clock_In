@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "name": "Making Events",
+    "initials": "ME",
+    "description": "Event planning and management",
+    "members": 12,
+    "upcomingEvents": 3,
+    "isActive": true
+  },
+  {
+    "id": 2,
+    "name": "Victoria's Events",
+    "initials": "VC",
+    "description": "Event planning and coordination",
+    "members": 5,
+    "upcomingEvents": 1,
+    "isActive": false
+  },
+  {
+    "id": 3,
+    "name": "Vicky College",
+    "initials": "VC",
+    "description": "Education & student events",
+    "members": 8,
+    "upcomingEvents": 0,
+    "isActive": false
+  }
+]

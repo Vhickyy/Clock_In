@@ -15,6 +15,7 @@ export interface EventRow {
   rsvps: number;
   checkedIn: number; // percentages are derived in the UI, not stored
   status: EventStatus;
+  guests: number;
 }
 
 export type RowAction = 'view' | 'edit' | 'duplicate' | 'delete';

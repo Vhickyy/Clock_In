@@ -4,13 +4,16 @@ import { Text } from '../../../shared/components/app-ui/text/text';
 import { Button } from '../../../shared/components/app-ui/button/button';
 import { Icon } from '../../../shared/components/app-ui/icon/icon';
 import { Router } from '@angular/router';
+import { OrganizationService } from './organization-service';
+import { JsonPipe } from '@angular/common';
 
 @Component({
-  imports: [DashHeader, Text, Button, Icon],
+  imports: [DashHeader, Text, Button, Icon, JsonPipe],
   selector: 'app-organization',
   styleUrl: './organization.css',
   templateUrl: './organization.html',
 })
 export class Organization {
   router = inject(Router);
+  orgService = inject(OrganizationService);
 }
