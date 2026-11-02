@@ -55,6 +55,11 @@ import {
   LucideUsersRound,
   LucideWifiOff,
   LucideShieldCheck,
+  LucideHeart,
+  LucideBriefcaseBusiness,
+  LucideCake,
+  LucidePartyPopper,
+  LucidePresentation,
 } from '@lucide/angular';
 
 export const ICONS = {
@@ -115,4 +120,9 @@ export const ICONS = {
   wifiOff: LucideWifiOff,
   verified: LucideShieldCheck,
   phone: LucideSmartphone,
+  heart: LucideHeart,
+  briefcaseBusiness: LucideBriefcaseBusiness,
+  cake: LucideCake,
+  partyPopper: LucidePartyPopper,
+  presentation: LucidePresentation,
 } satisfies Record<string, LucideIconInput>;

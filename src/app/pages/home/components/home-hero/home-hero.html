@@ -1,22 +1,23 @@
 <section class="flex justify-between items-center ml-[5%] gap-20 relative">
-  <div class="grid gap-4 py-24 w-[40%]">
+  <div class="grid gap-4 py-24 w-[40%]" #heroContent>
     <span
       appText
       variant="eyebrow"
+      data-animate="eyebrow"
       className="text-champagne bg-champagne-light w-fit rounded-full py-1 px-4"
     >
       EXCLUSIVE ACCESS. SEAMLESS ENTRY
     </span>
-    <h1 appText variant="hero" className="font-heading leading-none">
+    <h1 appText variant="hero" className="font-heading leading-none" data-animate="heading">
       The Smarter Way to Manage Your Invited Guests.
     </h1>
 
-    <p appText className="py-4">
+    <p appText className="py-4" data-animate="description">
       Every event has its own way of doing things. Clock In Guest gives organizers the flexibility
       to choose how invited guests are verified at the door.
     </p>
 
-    <div class="flex gap-4">
+    <div class="flex gap-4" data-animate="buttons">
       <button
         appButton
         btnClass="px-8 bg-primary"
@@ -94,7 +95,7 @@
   </div>
 </section>
 
-<section class="containerClass grid gap-28 py-20">
+<section class="containerClass grid gap-20 py-20">
   <div class="flex justify-between items-center">
     <div class="grid gap-4">
       <span appText variant="eyebrow" className="text-champagne">
@@ -119,11 +120,11 @@
       Learn More
     </button>
   </div>
-  <div class="grid grid-cols-3 gap-4 rounded-xl">
+  <div class="grid grid-cols-3 gap-6">
     @for (item of howItWorks; track $index) {
-      <div class="gridgap-4 items-center py-4 bg-white">
-        <img src="create.png" alt="{{ item.title }}" class="bg-white" />
-        <div class="grid gap-2">
+      <div class="grid gap-4 items-center py-4 bg-white rounded-xl">
+        <img src="{{ item.img }}" alt="{{ item.title }}" class="bg-white" />
+        <div class="grid gap-2 px-6 py-3">
           <h3 appText variant="subheading" className="font-extrabold">{{ item.title }}</h3>
           <p appText>{{ item.description }}</p>
         </div>
@@ -179,6 +180,21 @@
       Whether it's a wedding, birthday, or corporate event, Clock In Guest makes it easy to manage
       guest verification and create a seamless experience for everyone involved.
     </p>
+
+    <div class="grid grid-cols-3 gap-6">
+      @for (item of eventOccasions; track $index) {
+        <div class="grid gap-4 items-center">
+          <!-- <img src="{{ item.img }}" alt="{{ item.title }}" class="bg-white" /> -->
+          <div class="grid gap-2 py-3 w-fit">
+            <app-icon [name]="item.icon" className="text-champagne mx-auto" />
+            <h3 appText variant="subheading" className="font-extrabold text-white">
+              {{ item.title }}
+            </h3>
+            <!-- <p appText>{{ item.description }}</p> -->
+          </div>
+        </div>
+      }
+    </div>
   </div>
   <div class="w-[45%] h-full relative">
     <div
