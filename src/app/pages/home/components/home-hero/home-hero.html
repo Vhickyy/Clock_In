@@ -1,11 +1,11 @@
 <section class="flex justify-between items-center ml-[5%] gap-20 relative">
-  <div class="grid gap-4 py-28 w-[40%]">
+  <div class="grid gap-4 py-24 w-[40%]">
     <span
       appText
       variant="eyebrow"
       className="text-champagne bg-champagne-light w-fit rounded-full py-1 px-4"
     >
-      EXCLUSIVE ACCESS. SEAMLESS ENTRY.
+      EXCLUSIVE ACCESS. SEAMLESS ENTRY
     </span>
     <h1 appText variant="hero" className="font-heading leading-none">
       The Smarter Way to Manage Your Invited Guests.
@@ -37,32 +37,79 @@
   />
 </section>
 
-<section class="containerClass flex justify-between py-30">
-  @for (feat of features; track $index) {
-    <div class="grid gap-6">
-      <div class="rounded-full p-4 border border-champagne w-fit">
-        <app-icon name="users" [size]="25" />
+<section class="containerClass py-30">
+  <div class="w-[40%]">
+    <span
+      appText
+      variant="eyebrow"
+      className="text-champagne bg-champagne-light w-fit rounded-full py-1 px-4"
+    >
+      Why Clock In Guest
+    </span>
+    <h2 appText variant="heading" className="leading-tight">
+      Check-in that protects the event, not just the list.
+    </h2>
+  </div>
+
+  <div class="flex justify-between pt-14">
+    @for (feat of features; track $index) {
+      <div class="grid gap-4">
+        <div class="rounded-full p-4 border border-champagne w-fit bg-white">
+          <app-icon [name]="feat.icon" [size]="25" />
+        </div>
+        <h3 appText variant="subheading" className="font-extrabold">{{ feat.title }}</h3>
+        <p appText className="w-[80%]">{{ feat.description }}</p>
       </div>
-      <h3 appText variant="subheading" className="font-extrabold">{{ feat.title }}</h3>
-      <p appText className="w-[70%]">{{ feat.description }}</p>
-    </div>
-  }
+    }
+  </div>
 </section>
 
-<section class="flex justify-between items-center containerClass gap-8">
-  <div class="grid gap-4 py-20 w-[40%]">
-    <span appText variant="eyebrow" className="text-champagne">
-      EXCLUSIVE ACCESS. SEAMLESS ENTRY.
-    </span>
+<section class="bg-primary">
+  <div class="containerClass flex justify-between items-center gap-8">
+    <div class="w-[50%] h-full rounded-lg border-2 border-champagne overflow-clip">
+      <img src="clock_in_hero.png" alt="blurred_table" class="block w-full h-full object-cover" />
+    </div>
+    <div class="grid gap-4 py-20 w-[40%]">
+      <span appText variant="eyebrow" className="text-champagne"> AT THE DOOR</span>
+      <h2 appText variant="heading" className="font-heading leading-none text-white">
+        Built for the entrance, not the office.
+      </h2>
+      <div class="grid gap-4">
+        @for (item of howItWorks; track $index) {
+          <div class="flex gap-4 items-center py-4 border-b">
+            <div class="grid gap-2">
+              <!-- <h3 appText variant="subheading" className="font-extrabold">{{ item.title }}</h3> -->
+              <p appText>{{ item.description }}</p>
+            </div>
+          </div>
+        }
+      </div>
+      <button
+        appButton
+        btnClass="px-8 bg-champagne w-fit border border-primary rounded-full text-primary"
+      >
+        Explore all features
+      </button>
+    </div>
+  </div>
+</section>
 
-    <h2 appText variant="heading" className="font-heading leading-none">
-      From Invitation to Check-In In 3 Simple Steps.
-    </h2>
+<section class="containerClass grid gap-28 py-20">
+  <div class="flex justify-between items-center">
+    <div class="grid gap-4">
+      <span appText variant="eyebrow" className="text-champagne">
+        EXCLUSIVE ACCESS. SEAMLESS ENTRY.
+      </span>
 
-    <p appText className="py-4">
-      Every event has its own way of doing things. Clock In Guest gives organizers the flexibility
-      to choose how invited guests are verified at the door.
-    </p>
+      <h2 appText variant="heading" className="font-heading leading-none max-w-lg">
+        From Invitation to Check-In In 3 Simple Steps.
+      </h2>
+
+      <p appText className="max-w-2xl">
+        Every event has its own way of doing things. Clock In Guest gives organizers the flexibility
+        to choose how invited guests are verified at the door.
+      </p>
+    </div>
 
     <button
       appButton
@@ -72,9 +119,10 @@
       Learn More
     </button>
   </div>
-  <div class="grid grid-cols-3 gap-4 w-[70%]">
+  <div class="grid grid-cols-3 gap-4 rounded-xl">
     @for (item of howItWorks; track $index) {
-      <div class="flex gap-4 items-center py-4">
+      <div class="gridgap-4 items-center py-4 bg-white">
+        <img src="create.png" alt="{{ item.title }}" class="bg-white" />
         <div class="grid gap-2">
           <h3 appText variant="subheading" className="font-extrabold">{{ item.title }}</h3>
           <p appText>{{ item.description }}</p>
@@ -84,15 +132,13 @@
   </div>
 </section>
 
-<section class="bg-primary">
+<section class="bg-champagne-light">
   <div class="containerClass flex justify-between items-center gap-8">
     <div class="grid gap-4 py-20 w-[40%]">
-      <span appText variant="eyebrow" className="text-champagne">
-        EXCLUSIVE ACCESS. SEAMLESS ENTRY.
-      </span>
+      <span appText variant="eyebrow" className="text-champagne"> AT THE DOOR</span>
 
       <h2 appText variant="heading" className="font-heading leading-none text-white">
-        Any Event. Any Occasion.
+        Built for the entrance, not the office.
       </h2>
 
       <p appText className="py-4 text-white">
@@ -118,5 +164,26 @@
         </div>
       }
     </div>
+  </div>
+</section>
+
+<section class="bg-primary flex items-center pl-[5%]">
+  <div class="grid gap-4 py-24 flex-1">
+    <span appText variant="eyebrow" className="text-champagne"> Perfect for any occasion </span>
+
+    <h2 appText variant="heading" className="font-heading leading-none text-white">
+      Any Event. Any Occasion.
+    </h2>
+
+    <p appText className="py-4 text-white w-[60%]">
+      Whether it's a wedding, birthday, or corporate event, Clock In Guest makes it easy to manage
+      guest verification and create a seamless experience for everyone involved.
+    </p>
+  </div>
+  <div class="w-[45%] h-full relative">
+    <div
+      class="absolute h-full w-full inset-0 bg-linear-to-r from-primary via-primary/50 to-transparent"
+    ></div>
+    <img src="clock_in_hero.png" alt="blurred_table" class="block w-full h-full object-cover" />
   </div>
 </section>

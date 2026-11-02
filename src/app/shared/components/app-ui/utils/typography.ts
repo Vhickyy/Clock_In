@@ -4,11 +4,12 @@ export const textVariants = {
   // GLOBAL / PUBLIC PAGES
   hero: {
     classes:
-      'font-heading font-extrabold text-4xl leading-tight tracking-tight md:text-6xl lg:text-7xl',
+      'font-heading font-extrabold leading-tight tracking-tight text-[clamp(40px,5.4vw,72px)]',
   },
 
   heading: {
-    classes: 'font-heading font-semibold text-3xl leading-tight tracking-tight md:text-4xl',
+    classes:
+      'font-heading font-semibold leading-tight tracking-tight text-[clamp(30px,3.6vw,44px)]',
   },
 
   subheading: {

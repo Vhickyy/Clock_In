@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { Button } from '../../../../shared/components/app-ui/button/button';
 import { Text } from '../../../../shared/components/app-ui/text/text';
-import { Icon } from '../../../../shared/components/app-ui/icon/icon';
+import { Icon, IconName } from '../../../../shared/components/app-ui/icon/icon';
 
 @Component({
   imports: [Button, Text, Icon],
@@ -10,23 +10,27 @@ import { Icon } from '../../../../shared/components/app-ui/icon/icon';
   templateUrl: './home-hero.html',
 })
 export class HomeHero {
-  features = [
+  features: { icon: IconName; title: string; description: string }[] = [
     {
-      title: 'Secure Access',
+      icon: 'verified',
+      title: 'Gatecrasher protection',
       description:
         'Every QR code belongs to one invitation. Revoked or reused codes are refused at the door, instantly.',
     },
     {
-      title: 'Flexible Invitations',
+      icon: 'wifiOff',
+      title: 'Works with no internet',
       description:
         'Staff phones keep scanning when venue signal drops, then sync as soon as it returns.',
     },
     {
-      title: 'Real-Time Check-In',
+      icon: 'users',
+      title: 'Invitations that fit real life',
       description: 'Individuals, couples, families and +1s, sent by WhatsApp, SMS or email.',
     },
     {
-      title: 'Easy for Your Guests',
+      icon: 'phone',
+      title: 'Easy for your guests',
       description:
         'Guests open their invitation link and show the code. There is nothing to download.',
     },
