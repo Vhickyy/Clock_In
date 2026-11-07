@@ -11,10 +11,10 @@ import { Field, FormField } from '@angular/forms/signals';
 })
 export class Input {
   label = input<string>();
-  placeholder = input<string>('');
-  type = input<'text' | 'email' | 'password' | 'number' | 'date' | 'time'>('text');
+  // placeholder = input<string>('');
+  // type = input<'text' | 'email' | 'password' | 'number' | 'date' | 'time'>('text');
   leftIcon = input<IconName>();
   rightIcon = input<IconName>();
   id = input.required();
-  field = input.required<Field<any, string | number>>();
+  // field = input.required<Field<any, string | number>>();
 }

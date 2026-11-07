@@ -6,13 +6,14 @@
     @if (leftIcon()) {
       <app-icon [name]="leftIcon()!" class="w-4 h-4 text-gray-400" />
     }
-    <input
+    <!-- <input
       [type]="type()"
       [id]="label() ? id() : ''"
       [placeholder]="placeholder()"
       [formField]="field()"
       class="w-full outline-none text-text text-sm"
-    />
+    /> -->
+    <ng-content />
     @if (rightIcon()) {
       <app-icon [name]="rightIcon()!" class="w-4 h-4 text-gray-400" />
     }

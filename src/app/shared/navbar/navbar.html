@@ -3,8 +3,15 @@
     <p appText variant="eyebrow">CLOCK IN GUEST</p>
 
     <ul class="flex gap-10">
-      @for (item of [1, 2, 3, 4]; track item) {
-        <li appText>Menu Item</li>
+      @for (l of navLinks; track l.route) {
+        <li
+          appText
+          [routerLink]="l.route"
+          routerLinkActive="font-semibold border-b-2 border-[#B08A4E]"
+          [routerLinkActiveOptions]="{ exact: !!l.exact }"
+        >
+          {{ l.label }}
+        </li>
       }
     </ul>
 

@@ -125,4 +125,7 @@ export const ICONS = {
   cake: LucideCake,
   partyPopper: LucidePartyPopper,
   presentation: LucidePresentation,
+  // clipboardList: Lucideclipboard,
+  // listChecks: LucideListChecks,
+  // scanLine: LucideScanLine,
 } satisfies Record<string, LucideIconInput>;

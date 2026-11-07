@@ -1,10 +1,11 @@
 <div class="flex flex-col gap-5">
-  <app-input
-    id="event-name"
-    label="Event Name"
-    placeholder="e.g. Sarah & John’s Wedding"
-    [field]="form.name"
-  />
+  <app-input id="event-name" label="Event Name">
+    <input
+      placeholder="e.g. Sarah & John's Wedding"
+      [formField]="form.name"
+      id="event-name"
+      class="w-full outline-none text-text text-sm"
+  /></app-input>
 
   <!-- <app-select-field
         id="event-type"
@@ -22,7 +23,7 @@
       /> -->
 
   <div class="grid gap-5 sm:grid-cols-2">
-    <app-input
+    <!-- <app-input
       id="event-date"
       label="Event Date"
       type="date"
@@ -46,13 +47,14 @@
     placeholder="e.g. The Grand Hall, Lagos"
     leftIcon="mapPin"
     [field]="form.venue"
-  />
-</div>
+  /> -->
+  </div>
 
-<aside>
-  <app-image-upload
-    [previewUrl]="createEventService.coverUrl()"
-    (selected)="createEventService.setCover($event)"
-    (removed)="createEventService.clearCover()"
-  />
-</aside>
+  <aside>
+    <app-image-upload
+      [previewUrl]="createEventService.coverUrl()"
+      (selected)="createEventService.setCover($event)"
+      (removed)="createEventService.clearCover()"
+    />
+  </aside>
+</div>

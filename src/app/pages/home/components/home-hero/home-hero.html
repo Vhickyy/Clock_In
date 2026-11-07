@@ -1,5 +1,7 @@
-<section class="flex justify-between items-center ml-[5%] gap-20 relative">
-  <div class="grid gap-4 py-24 w-[40%]" #heroContent>
+<section
+  class="flex flex-col lg:flex-row justify-between items-center mx-[5%] lg:mx-0 lg:ml-[5%] relative pb-12 lg:pb-0"
+>
+  <div class="grid gap-4 py-12 lg:py-24 lg:w-[40%]" #heroContent>
     <span
       appText
       variant="eyebrow"
@@ -34,11 +36,51 @@
   <img
     src="clock_in_hero.png"
     alt="Clock In Hero"
-    class="h-full w-full object-cover md:absolute md:right-0 md:top-0 md:h-full md:w-[58%] md:[clip-path:polygon(105px_0,100%_0,100%_100%,0_100%)]"
+    class="h-full w-full object-cover md:absolute md:right-0 md:top-0 md:h-full md:w-[58%] md:[clip-path:polygon(105px_0,100%_0,100%_100%,0_100%)] rounded-lg border-2 border-champagne lg:rounded-none lg:border-0"
   />
 </section>
 
-<section class="containerClass py-30">
+<section class="bg-champagne-light">
+  <div class="containerClass grid gap-12 py-28">
+    <div class="flex flex-col lg:flex-row justify-between items-center">
+      <div class="grid gap-4">
+        <span appText variant="eyebrow" className="text-champagne">
+          EXCLUSIVE ACCESS. SEAMLESS ENTRY.
+        </span>
+
+        <h2 appText variant="heading" className="font-heading leading-none max-w-lg">
+          From Invitation to Check-In In 3 Simple Steps.
+        </h2>
+
+        <p appText className="max-w-2xl">
+          Every event has its own way of doing things. Clock In Guest gives organizers the
+          flexibility to choose how invited guests are verified at the door.
+        </p>
+      </div>
+
+      <button
+        appButton
+        btnClass="px-8 rounded-full w-fit"
+        [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
+      >
+        Learn More
+      </button>
+    </div>
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+      @for (item of howItWorks; track $index) {
+        <div class="grid gap-4 items-center py-4 bg-white rounded-xl">
+          <img src="{{ item.img }}" alt="{{ item.title }}" class="w-[70%] mx-auto" />
+          <div class="grid gap-2 px-6 py-3">
+            <h3 appText variant="subheading" className="font-extrabold">{{ item.title }}</h3>
+            <p appText>{{ item.description }}</p>
+          </div>
+        </div>
+      }
+    </div>
+  </div>
+</section>
+
+<!-- <section class="containerClass py-30">
   <div class="w-[40%]">
     <span
       appText
@@ -63,19 +105,32 @@
       </div>
     }
   </div>
-</section>
+</section> -->
 
-<section class="bg-primary">
-  <div class="containerClass flex justify-between items-center gap-8">
-    <div class="w-[50%] h-full rounded-lg border-2 border-champagne overflow-clip">
-      <img src="clock_in_hero.png" alt="blurred_table" class="block w-full h-full object-cover" />
+<section class="bg-primary py-20">
+  <div
+    class="containerClass flex flex-col-reverse lg:flex-row-reverse justify-between items-center gap-8"
+  >
+    <div class="lg:w-[50%] flex flex-col">
+      <div class="w-full h-64 rounded-lg border-2 border-champagne overflow-clip">
+        <img src="clock_in_hero.png" alt="blurred_table" class="block w-full h-full object-cover" />
+      </div>
+      <div class="grid grid-cols-2 gap-4 py-6">
+        @for (item of [1, 2, 3, 4]; track $index) {
+          <div class="bg-primary-light rounded-lg p-4 grid gap-1 items-center">
+            <div class="w-3 h-3 rounded-full bg-green-900"></div>
+            <h5>Valid</h5>
+            <p>Guest may enter</p>
+          </div>
+        }
+      </div>
     </div>
-    <div class="grid gap-4 py-20 w-[40%]">
+    <div class="grid gap-4 lg:w-[40%]">
       <span appText variant="eyebrow" className="text-champagne"> AT THE DOOR</span>
       <h2 appText variant="heading" className="font-heading leading-none text-white">
         Built for the entrance, not the office.
       </h2>
-      <div class="grid gap-4">
+      <div class="grid lg:gap-4">
         @for (item of howItWorks; track $index) {
           <div class="flex gap-4 items-center py-4 border-b">
             <div class="grid gap-2">
@@ -95,99 +150,46 @@
   </div>
 </section>
 
-<section class="containerClass grid gap-20 py-20">
-  <div class="flex justify-between items-center">
-    <div class="grid gap-4">
-      <span appText variant="eyebrow" className="text-champagne">
-        EXCLUSIVE ACCESS. SEAMLESS ENTRY.
-      </span>
-
-      <h2 appText variant="heading" className="font-heading leading-none max-w-lg">
-        From Invitation to Check-In In 3 Simple Steps.
-      </h2>
-
-      <p appText className="max-w-2xl">
-        Every event has its own way of doing things. Clock In Guest gives organizers the flexibility
-        to choose how invited guests are verified at the door.
-      </p>
-    </div>
-
-    <button
-      appButton
-      btnClass="px-8 rounded-full w-fit"
-      [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
-    >
-      Learn More
-    </button>
-  </div>
-  <div class="grid grid-cols-3 gap-6">
-    @for (item of howItWorks; track $index) {
-      <div class="grid gap-4 items-center py-4 bg-white rounded-xl">
-        <img src="{{ item.img }}" alt="{{ item.title }}" class="bg-white" />
-        <div class="grid gap-2 px-6 py-3">
-          <h3 appText variant="subheading" className="font-extrabold">{{ item.title }}</h3>
-          <p appText>{{ item.description }}</p>
-        </div>
-      </div>
-    }
-  </div>
-</section>
-
 <section class="bg-champagne-light">
-  <div class="containerClass flex justify-between items-center gap-8">
-    <div class="grid gap-4 py-20 w-[40%]">
+  <div class="containerClass flex flex-col py-20 gap-14">
+    <div class="grid gap-4 w-[40%]">
       <span appText variant="eyebrow" className="text-champagne"> AT THE DOOR</span>
-
-      <h2 appText variant="heading" className="font-heading leading-none text-white">
-        Built for the entrance, not the office.
+      <h2 appText variant="heading" className="font-heading leading-none">
+        From workspace to front door in seven steps.
       </h2>
-
-      <p appText className="py-4 text-white">
-        Whether it's a wedding, birthday, or corporate event, Clock In Guest makes it easy to manage
-        guest verification and create a seamless experience for everyone involved.
-      </p>
-
-      <button
-        appButton
-        btnClass="px-8 rounded-full w-fit"
-        [iconProps]="{ name: 'arrowRight', className: 'text-white' }"
-      >
-        Learn More
-      </button>
     </div>
-    <div class="grid grid-cols-3 gap-4 w-[70%]">
-      @for (item of howItWorks; track $index) {
-        <div class="flex gap-4 items-center py-4">
-          <div class="grid gap-2">
-            <h3 appText variant="subheading" className="font-extrabold">{{ item.title }}</h3>
-            <p appText>{{ item.description }}</p>
-          </div>
+    <div class="grid grid-cols-4 gap-8">
+      @for (item of [1, 2, 3, 4, 5, 6, 7]; track $index) {
+        <div class="items-center py-4 border-t-2 border-champagne grid gap-2">
+          <h5>0{{ $index + 1 }}</h5>
+          <h3 appText variant="subheading" className="font-extrabold">Hi</h3>
+          <p appText>Hi</p>
         </div>
       }
     </div>
   </div>
 </section>
 
-<section class="bg-primary flex items-center pl-[5%]">
-  <div class="grid gap-4 py-24 flex-1">
+<section class="bg-primary flex flex-col lg:flex-row items-center px-[5%] lg:px-0 lg:pl-[5%]">
+  <div class="grid my-20 flex-1">
     <span appText variant="eyebrow" className="text-champagne"> Perfect for any occasion </span>
 
     <h2 appText variant="heading" className="font-heading leading-none text-white">
       Any Event. Any Occasion.
     </h2>
 
-    <p appText className="py-4 text-white w-[60%]">
+    <p appText className="py-4 text-white lg:w-[80%]">
       Whether it's a wedding, birthday, or corporate event, Clock In Guest makes it easy to manage
       guest verification and create a seamless experience for everyone involved.
     </p>
 
-    <div class="grid grid-cols-3 gap-6">
+    <div class="grid grid-cols-3 gap-x-2 gap-y-6 mt-4">
       @for (item of eventOccasions; track $index) {
         <div class="grid gap-4 items-center">
           <!-- <img src="{{ item.img }}" alt="{{ item.title }}" class="bg-white" /> -->
-          <div class="grid gap-2 py-3 w-fit">
+          <div class="grid w-fit gap-y-2">
             <app-icon [name]="item.icon" className="text-champagne mx-auto" />
-            <h3 appText variant="subheading" className="font-extrabold text-white">
+            <h3 appText className="font-extrabold text-white text-xs">
               {{ item.title }}
             </h3>
             <!-- <p appText>{{ item.description }}</p> -->
@@ -196,7 +198,7 @@
       }
     </div>
   </div>
-  <div class="w-[45%] h-full relative">
+  <div class="lg:w-[50%] h-full relative hidden lg:block">
     <div
       class="absolute h-full w-full inset-0 bg-linear-to-r from-primary via-primary/50 to-transparent"
     ></div>
