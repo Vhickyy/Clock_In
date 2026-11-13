@@ -1,8 +1,8 @@
-<header>
-  <nav class="containerClass flex items-center justify-between py-5">
+<header class="bg-champagne-light sticky top-0 z-50">
+  <nav class="containerClass flex items-center justify-between py-4 lg:py-5">
     <p appText variant="eyebrow">CLOCK IN GUEST</p>
 
-    <ul class="flex gap-10">
+    <ul class="gap-10 hidden lg:flex">
       @for (l of navLinks; track l.route) {
         <li
           appText
@@ -15,11 +15,19 @@
       }
     </ul>
 
-    <div class="flex gap-4">
-      <button appButton btnClass="px-8 bg-transparent border border-champagne text-champagne">
+    <div class="lg:flex gap-4 hidden">
+      <button appButton btnClass="px-8 bg-transparent border border-champagne text-champagne ">
         Log In
       </button>
-      <button appButton btnClass="px-8 flex-1">Get Started</button>
+      <button appButton btnClass="lg:px-8 flex-1">Get Started</button>
+    </div>
+    <div class="flex gap-2 items-center lg:hidden">
+      <button appButton btnClass="p-1 rounded-sm bg-transparent border border-champagne">
+        <app-icon name="lock" className="text-xs" />
+      </button>
+      <button appButton btnClass="p-1 rounded-sm bg-transparent border border-champagne">
+        <app-icon name="menu" className="text-xs" />
+      </button>
     </div>
   </nav>
 </header>

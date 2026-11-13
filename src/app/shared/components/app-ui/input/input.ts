@@ -15,6 +15,6 @@ export class Input {
   // type = input<'text' | 'email' | 'password' | 'number' | 'date' | 'time'>('text');
   leftIcon = input<IconName>();
   rightIcon = input<IconName>();
-  id = input.required();
+  id = input();
   // field = input.required<Field<any, string | number>>();
 }

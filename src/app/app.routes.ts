@@ -15,6 +15,10 @@ export const routes: Routes = [
         loadComponent: () => import('./pages/about/about').then((m) => m.About),
       },
       {
+        path: 'pricing',
+        loadComponent: () => import('./pages/pricing/pricing').then((m) => m.Pricing),
+      },
+      {
         path: 'how-it-works',
         loadComponent: () => import('./pages/how-it-works/how-it-works').then((m) => m.HowItWorks),
       },
@@ -48,14 +52,32 @@ export const routes: Routes = [
       },
       {
         path: 'events',
-        loadComponent: () => import('./pages/dashboard/events/events').then((m) => m.Events),
-      },
-      {
-        path: 'events/new',
-        loadComponent: () =>
-          import('./pages/dashboard/events/pages/create-event/create-event').then(
-            (m) => m.CreateEvent,
-          ),
+        children: [
+          {
+            path: '',
+            // pathMatch: 'full',
+            loadComponent: () => import('./pages/dashboard/events/events').then((m) => m.Events),
+          },
+          {
+            path: 'new',
+            loadComponent: () =>
+              import('./pages/dashboard/events/pages/create-event/create-event').then(
+                (m) => m.CreateEvent,
+              ),
+          },
+          {
+            path: ':id',
+            loadComponent: () =>
+              import('./pages/dashboard/events/pages/event-details/event-details').then(
+                (m) => m.EventDetails,
+              ),
+          },
+          {
+            path: ':id/guests',
+            loadComponent: () =>
+              import('./pages/dashboard/events/pages/guests/guests').then((m) => m.Guests),
+          },
+        ],
       },
     ],
   },

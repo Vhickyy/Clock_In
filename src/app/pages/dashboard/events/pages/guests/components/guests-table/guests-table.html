@@ -1,0 +1,48 @@
+<app-table
+  [data]="guestRes.value()!"
+  [columns]="guestCols"
+  [pageSize]="6"
+  itemLabel="events"
+  [cellTemplates]="{
+    name: nameCell,
+    contact: contactCell,
+    invitationType: invitationCell,
+    group: groupCell,
+    status: statusCell,
+    checkInTime: checkInCell,
+    actions: actionsCell,
+  }"
+/>
+
+<ng-template #nameCell let-row>
+  <span appText variant="meta" className="font-semibold text-black">{{ row.name }}</span>
+  @if (row.isVip) {
+    <span appText variant="badge" class="rounded bg-champagne-light px-1.5 py-0.5 text-champagne"
+      >VIP</span
+    >
+  }
+</ng-template>
+
+<ng-template #contactCell let-row>
+  <p appText variant="meta">{{ row.email }}</p>
+  <p appText variant="meta">{{ row.phone }}</p>
+</ng-template>
+
+<ng-template #invitationCell let-row>
+  <span appText variant="badge">{{ row.invitationType }}</span>
+</ng-template>
+
+<ng-template #groupCell let-row>
+  <p appText variant="meta" className="font-semibold text-black">{{ row.group }}</p>
+  <p appText variant="meta">Group of {{ row.groupSize }}</p>
+</ng-template>
+
+<ng-template #statusCell let-row>
+  <!-- <span appText variant="badge">{{ statusLabels[row.status] }}</span> -->
+</ng-template>
+
+<ng-template #checkInCell let-row>
+  <span appText variant="meta">{{ row.checkInTime ?? '—' }}</span>
+</ng-template>
+
+<ng-template #actionsCell let-row><button>⋮</button></ng-template>

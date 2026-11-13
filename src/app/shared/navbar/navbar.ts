@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Text } from '../components/app-ui/text/text';
 import { Button } from '../components/app-ui/button/button';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Icon } from '../components/app-ui/icon/icon';
 
 export interface NavLink {
   label: string;
@@ -10,7 +11,7 @@ export interface NavLink {
 }
 
 @Component({
-  imports: [Text, Button, RouterLink, RouterLinkActive],
+  imports: [Text, Button, RouterLink, RouterLinkActive, Icon],
   selector: 'app-navbar',
   styleUrl: './navbar.css',
   templateUrl: './navbar.html',

@@ -3,6 +3,8 @@ import { ColumnDef } from '@tanstack/angular-table';
 import { EventRow, RowAction } from './types';
 import { Crumb } from '../../../shared/components/app-ui/app_types/text_types';
 import { EVENT_STATS, EVENT_COLUMNS, STATUS_TONE, EVENTS, DATE_RANGE_OPTIONS } from './data';
+import { httpResource } from '@angular/common/http';
+import { EventOverview, Guest, GuestSummary } from './models/api';
 
 @Service()
 export class EventsService {
@@ -66,4 +68,24 @@ export class EventsService {
     this.type.set('all');
     this.range.set('all');
   }
+
+  // event details
+  eventDetailsRes = httpResource<EventOverview>(() => '/data/eventdetails.json');
+
+  // guest lists
+  guestListsRes = httpResource<Guest[]>(() => '/data/guests.json');
+
+  guestSummary = computed<GuestSummary | null>(() => {
+    if (this.guestListsRes.hasValue()) {
+      const counts = { total: 0, checkedIn: 0, pending: 0, invited: 0 };
+      for (const g of this.guestListsRes.value()) {
+        counts.total++;
+        if (g.status === 'checked_in') counts.checkedIn++;
+        else if (g.status === 'pending') counts.pending++;
+        else counts.invited++;
+      }
+      return counts;
+    }
+    return null;
+  });
 }

@@ -60,6 +60,9 @@ import {
   LucideCake,
   LucidePartyPopper,
   LucidePresentation,
+  LucideMenu,
+  LucideGem,
+  LucideSparkles,
 } from '@lucide/angular';
 
 export const ICONS = {
@@ -125,7 +128,7 @@ export const ICONS = {
   cake: LucideCake,
   partyPopper: LucidePartyPopper,
   presentation: LucidePresentation,
-  // clipboardList: Lucideclipboard,
-  // listChecks: LucideListChecks,
-  // scanLine: LucideScanLine,
+  menu: LucideMenu,
+  gem: LucideGem,
+  sparkles: LucideSparkles,
 } satisfies Record<string, LucideIconInput>;

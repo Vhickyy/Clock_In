@@ -14,15 +14,6 @@ import { textVariants } from '../utils/typography';
 export class Text {
   variant = input<TextVariant>('body');
 
-  // className = input('');
-
-  // text = input.required<string>();
-
-  // config = computed(() => textVariants[this.variant()]);
-  // classes = computed(() => cn(this.config().classes, this.className()));
-
-  // variant = input<TextVariant>('body', { alias: 'appText' });
-
   className = input('');
 
   classes = computed(() =>

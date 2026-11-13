@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "Adanna Okafor",
+    "isVip": true,
+    "email": "adanna.okafor@gmail.com",
+    "phone": "+234 806 123 4567",
+    "invitationType": "QR Code",
+    "group": "VIP Guests",
+    "groupSize": 3,
+    "status": "checked_in",
+    "checkInTime": "6:42 PM"
+  },
+  {
+    "id": 2,
+    "name": "Emeka Nwachukwu",
+    "isVip": false,
+    "email": "emeka.nwachukwu@gmail.com",
+    "phone": "+234 803 987 6543",
+    "invitationType": "QR Code",
+    "group": "VIP Guests",
+    "groupSize": 2,
+    "status": "checked_in",
+    "checkInTime": "6:56 PM"
+  },
+  {
+    "id": 3,
+    "name": "Tolu Adebayo",
+    "isVip": false,
+    "email": "tolu.adebayo@yahoo.com",
+    "phone": "+234 810 555 6677",
+    "invitationType": "Manual Code",
+    "group": "General",
+    "groupSize": 1,
+    "status": "pending",
+    "checkInTime": null
+  },
+  {
+    "id": 4,
+    "name": "Chinwe Eze",
+    "isVip": false,
+    "email": "chinwe.eze@gmail.com",
+    "phone": "+234 806 777 8899",
+    "invitationType": "QR Code",
+    "group": "General",
+    "groupSize": 4,
+    "status": "checked_in",
+    "checkInTime": "7:12 PM"
+  },
+  {
+    "id": 5,
+    "name": "Michael Kayode",
+    "isVip": false,
+    "email": "michael.kayode@outlook.com",
+    "phone": "+234 701 222 3344",
+    "invitationType": "QR Code",
+    "group": "Media",
+    "groupSize": 1,
+    "status": "invited",
+    "checkInTime": null
+  },
+  {
+    "id": 6,
+    "name": "Blessing Udo",
+    "isVip": false,
+    "email": "blessing.udo@gmail.com",
+    "phone": "+234 807 987 1200",
+    "invitationType": "QR Code",
+    "group": "Staff",
+    "groupSize": 1,
+    "status": "checked_in",
+    "checkInTime": "6:28 PM"
+  },
+  {
+    "id": 7,
+    "name": "Fatima Ahmed",
+    "isVip": false,
+    "email": "fatima.ahmed@yahoo.com",
+    "phone": "+234 809 654 3210",
+    "invitationType": "QR Code",
+    "group": "General",
+    "groupSize": 2,
+    "status": "checked_in",
+    "checkInTime": "7:05 PM"
+  },
+  {
+    "id": 8,
+    "name": "David Williams",
+    "isVip": false,
+    "email": "david.williams@gmail.com",
+    "phone": "+234 812 345 6789",
+    "invitationType": "Manual Code",
+    "group": "Staff",
+    "groupSize": 1,
+    "status": "checked_in",
+    "checkInTime": "6:50 PM"
+  },
+  {
+    "id": 9,
+    "name": "Ezinne Nwosu",
+    "isVip": false,
+    "email": "ezinne.nwosu@outlook.com",
+    "phone": "+234 803 443 2211",
+    "invitationType": "QR Code",
+    "group": "General",
+    "groupSize": 3,
+    "status": "invited",
+    "checkInTime": null
+  },
+  {
+    "id": 10,
+    "name": "Kelechi Obinna",
+    "isVip": false,
+    "email": "kelechi.obinna@gmail.com",
+    "phone": "+234 818 765 4321",
+    "invitationType": "QR Code",
+    "group": "VIP Guests",
+    "groupSize": 2,
+    "status": "checked_in",
+    "checkInTime": "6:37 PM"
+  }
+]

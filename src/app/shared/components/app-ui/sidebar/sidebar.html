@@ -11,7 +11,7 @@
   <aside
     class="fixed md:relative inset-y-0 left-0 z-50 bg-primary border-r border-border transition-all duration-300 ease-in-out flex flex-col h-screen"
     [class.w-16]="isCollapsed() && !isMobile()"
-    [class.w-64]="!isCollapsed() || isMobile()"
+    [class.w-60]="!isCollapsed() || isMobile()"
     [class.-translate-x-full]="isMobile() && !sidebarOpen()"
     [class.translate-x-0]="!isMobile() || sidebarOpen()"
   >
@@ -57,7 +57,14 @@
 
             @if (!isCollapsed() || isMobile()) {
               <div class="flex items-center justify-between flex-1 min-w-0">
-                <span variant="navLabel" class="truncate">{{ item.label }}</span>
+                <span
+                  appText
+                  variant="navLink"
+                  class="truncate text-white"
+                  routerLinkActive="text-primary-dark!"
+                  [routerLinkActiveOptions]="{ exact: item.exact }"
+                  >{{ item.label }}</span
+                >
 
                 <!-- @if (item.badge) {
                   <span

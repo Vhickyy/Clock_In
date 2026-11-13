@@ -1,105 +1,106 @@
 import { TextVariantConfig } from '../app_types/text_types';
 
 export const textVariants = {
-  // GLOBAL / PUBLIC PAGES
+  // ─────────────── PUBLIC PAGES ───────────────
   hero: {
     classes:
-      'font-heading font-extrabold leading-tight tracking-tight text-[clamp(40px,5.4vw,72px)]',
+      'font-heading font-semibold leading-[1.02] tracking-tight text-[clamp(2.75rem,5.5vw,4.5rem)] text-text text-balance',
   },
-
   heading: {
     classes:
-      'font-heading font-semibold leading-tight tracking-tight text-[clamp(30px,3.6vw,44px)]',
+      'font-heading font-semibold leading-tight tracking-tight text-[clamp(2rem,3.8vw,3.25rem)] text-text text-balance',
   },
-
-  subheading: {
-    classes: 'font-heading font-semibold text-base leading-snug md:text-xl lg:text-2xl',
-  },
-
-  body: {
-    classes: 'font-body text-base leading-7 text-muted',
-  },
-
-  eyebrow: {
-    classes: 'font-body text-xs font-semibold uppercase tracking-[0.2em] text-primary',
-  },
-
-  // DASHBOARD LAYOUT
-  pageTitle: {
-    classes: 'font-heading font-bold text-2xl tracking-tight text-text md:text-3xl',
-  },
-
-  pageSubtitle: {
-    classes: 'font-body text-sm leading-6 text-muted md:text-base',
-  },
-
-  sectionTitle: {
-    classes: 'font-heading font-semibold text-base text-text md:text-lg',
-  },
-
-  sectionAction: {
+  title: {
     classes:
-      'font-body cursor-pointer text-xs font-semibold text-primary hover:underline md:text-sm',
+      'font-heading font-semibold leading-tight tracking-tight text-xl text-text md:text-2xl',
+  },
+  subheading: {
+    classes: 'font-heading font-medium text-lg leading-snug text-text md:text-xl',
+  },
+  body: {
+    classes: 'font-body text-sm leading-7 text-muted md:text-base',
+  },
+  eyebrow: {
+    classes:
+      'font-body text-[10px] font-semibold uppercase tracking-[0.2em] text-primary md:text-xs',
   },
 
-  // CARDS
+  // ─────────────── INVITATIONS ───────────────
+  invitationTitle: {
+    classes:
+      'font-heading text-4xl font-medium leading-tight tracking-tight text-text md:text-5xl lg:text-6xl',
+  },
+
+  // ─────────────── DASHBOARD: HEADINGS ───────────────
+  pageTitle: {
+    // "Choose Your Workspace"
+    classes: 'font-heading text-2xl font-semibold leading-tight text-text md:text-3xl',
+  },
+  eventTitle: {
+    // "Summer Gala 2025" ~40px at 1536, ~28px on mobile
+    classes:
+      'font-heading font-semibold leading-tight tracking-tight text-text text-[clamp(1.75rem,1.25rem+1.6vw,2.5rem)]',
+  },
+  panelTitle: {
+    // "Guest Directory" ~20px
+    classes: 'font-semibold leading-tight text-text text-[clamp(1.125rem,1rem+0.4vw,1.25rem)]',
+  },
+  panelTitleSm: {
+    // "Guest Summary", "Guest Access Rules", "Quick Actions" ~17px
+    classes: 'font-semibold leading-tight text-text text-[clamp(1rem,0.9rem+0.2vw,1.0625rem)]',
+  },
+  sectionTitle: {
+    classes: 'font-body text-base font-semibold text-text md:text-lg',
+  },
+
+  // ─────────────── DASHBOARD: TEXT ───────────────
+  subtitle: {
+    // panel descriptions, "Need Help?" body ~13-14px
+    classes: 'font-body text-[13px] leading-6 text-muted md:text-sm',
+  },
   cardTitle: {
-    classes: 'font-body font-semibold text-[14px] text-text',
+    // date, venue, access rule values, "Need Help?" ~13px
+    classes: 'font-body text-xs font-semibold text-text md:text-[13px]',
   },
-
   cardValue: {
-    classes: 'font-heading text-2xl font-bold leading-none tracking-tight text-text md:text-3xl',
+    // 248 / 198 / 32 / 18 ~22px
+    classes:
+      'font-body font-bold leading-none text-text text-[clamp(1.25rem,1.1rem+0.35vw,1.375rem)]',
+  },
+  meta: {
+    // email, phone, "Group of 3", stat labels ~12px
+    classes: 'font-body text-xs leading-5 text-muted',
   },
 
-  cardTrend: {
-    classes: 'font-body text-xs font-medium',
+  // ─────────────── TABLE ───────────────
+  tableHead: {
+    classes: 'font-body text-xs font-semibold text-text',
   },
-
-  // TABLES
-  tableHeader: {
-    classes: 'font-body text-[11px] font-semibold uppercase tracking-wider text-muted',
+  tableCell: {
+    // guest name ~12-13px
+    classes: 'font-body text-xs font-semibold text-text md:text-[13px]',
   },
-
-  tableCellMuted: {
-    classes: 'font-body text-sm text-muted',
-  },
-
-  // LISTS
-  listMeta: {
-    classes: 'font-body text-[11px] text-muted',
-  },
-
-  // BADGES AND TAGS
   badge: {
-    classes: 'font-body text-[11px] font-semibold',
+    // status pills, invitation type pills, VIP tag
+    classes: 'font-body text-[10px] font-medium leading-none md:text-[11px]',
   },
 
-  tag: {
-    classes: 'font-body text-[10px] font-bold uppercase tracking-wider',
+  // ─────────────── CONTROLS ───────────────
+  navLink: {
+    // tabs, back link ~12-13px
+    classes:
+      'font-body text-xs font-medium text-text transition-colors hover:text-primary md:text-[13px]',
+  },
+  button: {
+    classes: 'font-body text-xs font-semibold md:text-[13px]',
   },
 
-  // FORMS
+  // ─────────────── FORMS ───────────────
   formLabel: {
     classes: 'font-body text-sm font-medium text-text',
   },
-
   formError: {
     classes: 'font-body text-xs font-medium text-error',
-  },
-
-  // INVITATIONS
-  invitationTitle: {
-    classes:
-      'font-heading text-3xl font-semibold leading-tight tracking-tight text-text md:text-5xl',
-  },
-
-  // MISC
-  timestamp: {
-    classes: 'font-body text-[10px] text-muted',
-  },
-
-  emptyState: {
-    classes: 'font-body text-sm leading-6 text-center text-muted',
   },
 } satisfies Record<string, TextVariantConfig>;
 

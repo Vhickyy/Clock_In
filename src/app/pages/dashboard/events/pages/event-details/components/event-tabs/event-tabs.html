@@ -1,0 +1,12 @@
+<div class="flex justify-between text-center border-b-2 border-border">
+  @for (item of eventDetailData.tabs; track $index) {
+    <div
+      class="pb-2 text-champagne px-4 cursor-pointer"
+      [class.text-champagne]="item.label == 'Overview'"
+      [class.border-champagne]="item.label == 'Overview'"
+      [class.border-b-2]="item.label == 'Overview'"
+    >
+      <p appText variant="navLink">{{ item.label }}</p>
+    </div>
+  }
+</div>

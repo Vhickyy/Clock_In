@@ -5,10 +5,9 @@ import { Button } from '../../../shared/components/app-ui/button/button';
 import { Icon } from '../../../shared/components/app-ui/icon/icon';
 import { Router } from '@angular/router';
 import { OrganizationService } from './organization-service';
-import { JsonPipe } from '@angular/common';
 
 @Component({
-  imports: [DashHeader, Text, Button, Icon, JsonPipe],
+  imports: [DashHeader, Text, Button, Icon],
   selector: 'app-organization',
   styleUrl: './organization.css',
   templateUrl: './organization.html',

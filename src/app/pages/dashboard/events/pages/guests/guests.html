@@ -1,0 +1,44 @@
+<div
+  variant="meta"
+  routerLink="/dashboard/events/1"
+  class="flex gap-2 items-center pb-4 cursor-pointer"
+>
+  <app-icon name="arrowLeft" [size]="17" />
+  <p appText variant="meta" className="text-champagne!">Back to Event Overview</p>
+</div>
+<section>
+  <!-- <img src="clock_in_hero.png" alt="" class="h-52 w-full object-cover" />
+  <div
+    class="absolute w-full h-full inset-0 bg-linear-to-r from-primary-dark via-primary/80 to-primary/20 p-8 z-10"
+  >
+    <h4 appText variant="title" className="text-white!">{{ eventDetailRes.value()?.name }}</h4>
+    <div></div>
+  </div> -->
+</section>
+<section class="flex gap-4 mt-6">
+  <div class="flex-1 grid gap-6">
+    <app-event-tabs />
+    <div class="bg-white p-4 border rounded-lg border-border grid gap-6">
+      <div>
+        <h4 appText variant="panelTitle">Guest Directory</h4>
+        <p appText variant="subtitle">Manage your guest list, view details and track attendance.</p>
+      </div>
+      <div class="flex justify-between items-center gap-8">
+        <div class="w-[50%]">
+          <app-input leftIcon="search">
+            <input
+              placeholder="e.g. Sarah & John's Wedding"
+              /* [formField]="search" */
+              id="event-name"
+              class="w-full outline-none text-text text-sm flex-1"
+            />
+          </app-input>
+        </div>
+        <div class="w-[20%] bg-white border border-border h-full"></div>
+      </div>
+      <app-guests-table />
+    </div>
+  </div>
+
+  <div class="w-[20%] p-4 border rounded-lg border-border bg-white h-full"></div>
+</section>

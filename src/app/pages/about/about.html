@@ -1,1 +1,111 @@
-<p>about works!</p>
+<section
+  class="flex flex-col lg:flex-row justify-between items-center mx-[5%] lg:mx-0 lg:ml-[5%] relative pb-12 lg:pb-0"
+>
+  <div class="grid gap-4 py-12 lg:py-24 lg:w-[40%]" #heroContent>
+    <span
+      appText
+      variant="eyebrow"
+      data-animate="eyebrow"
+      className="text-champagne bg-champagne-light w-fit rounded-full py-1 px-4"
+    >
+      EXCLUSIVE ACCESS. SEAMLESS ENTRY
+    </span>
+    <h1 appText variant="hero" className="font-heading leading-none" data-animate="heading">
+      More Than <br />
+      Just an Invitation.
+    </h1>
+
+    <p appText className="py-4" data-animate="description">
+      Every event has its own way of doing things. Clock In Guest gives organizers the flexibility
+      to choose how invited guests are verified at the door.
+    </p>
+  </div>
+  <img
+    src="clock_in_hero.png"
+    alt="Clock In Hero"
+    class="w-full object-cover lg:my-12 md:h-full md:w-[54%] rounded-xl lg:rounded-r-none border-2 border-champagne lg:border-0"
+  />
+</section>
+
+<section class="bg-champagne-light">
+  <div class="containerClass py-20 lg:py-28 grid gap-6">
+    <div class="grid gap-4">
+      <span appText variant="eyebrow" className="text-champagne">OUR VALUES</span>
+      <h2 appText variant="heading" className="font-heading leading-none max-w-lg">
+        What Drives Us
+      </h2>
+      <p appText className="max-w-xl">
+        Our values shape every feature, decision, and experience we create. You and your event
+        matters most to us.
+      </p>
+    </div>
+    <div class="flex flex-col lg:flex-row gap-5 justify-between">
+      <div class="hidden lg:block lg:w-[40%]">
+        <img src="our-story-phone.png" alt="our-story" class="w-full" />
+      </div>
+      <div class="grid grid-cols-2 gap-5 lg:w-[55%]">
+        @for (item of whatDrivesUs; track $index) {
+          <div
+            class="grid gap-2 bg-champagne/50 rounded-md px-2 py-4"
+            [class]="$index % 2 == 0 ? 'translate-y-10' : 'mt-0'"
+          >
+            <div class="rounded-full border w-fit p-2 border-champagne">
+              <app-icon [name]="item.icon" class="text-champagne" />
+            </div>
+            <h5 appText variant="subheading" className="font-heading">
+              {{ item.title }}
+            </h5>
+            <p appText>{{ item.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<section
+  class="containerClass py-20 lg:py-28 flex flex-col gap-6 lg:flex-row justify-between items-center"
+>
+  <div class="grid gap-4 lg:w-[35%]">
+    <span appText variant="eyebrow" className="text-champagne">OUR STORY</span>
+    <h2 appText variant="heading" className="font-heading leading-none max-w-lg">
+      From Invitation to Check-In In 3 Simple Steps.
+    </h2>
+    <p appText className="max-w-2xl">
+      Every event has its own way of doing things. Clock In Guest gives organizers the flexibility
+      to choose how invited guests are verified at the door.
+    </p>
+  </div>
+  <div class="lg:w-[55%] flex flex-col lg:flex-row">
+    <img src="our-story-phone.png" alt="our-story" class="lg:w-full" />
+    <div class="bg-champagne-light flex items-center p-6 rounded-xl">
+      <h5 appText va>Invited People. Exclusive Acess. Seamless Experience.</h5>
+    </div>
+  </div>
+</section>
+<section class="bg-primary flex flex-col lg:flex-row items-center px-[5%] lg:pr-0">
+  <div class="grid my-20 flex-1">
+    <span appText variant="eyebrow" className="text-champagne"> THE IMPACT </span>
+
+    <h2 appText variant="heading" className="font-heading leading-none text-white">
+      Event Made Simple. Experience Made Memorable.
+    </h2>
+
+    <p appText className="py-4 text-white lg:w-[80%]">
+      From intimate gatherings to large scale conferences. Clock In Guest helps you create secure
+      and well-managed events.
+    </p>
+    <button
+      appButton
+      btnClass="px-8 bg-white border border-primary text-primary w-[50%] lg:w-[30%]"
+    >
+      How It Works
+    </button>
+  </div>
+  <div class="lg:w-[50%] h-full relative hidden lg:block">
+    <div
+      class="absolute h-full w-full inset-0 bg-linear-to-r from-primary via-primary/50 to-transparent"
+    ></div>
+    <img src="clock_in_hero.png" alt="blurred_table" class="block w-full h-full object-cover" />
+  </div>
+</section>

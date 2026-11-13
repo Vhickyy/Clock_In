@@ -1,0 +1,76 @@
+{
+  "id": "evt_001",
+  "name": "Summer Gala 2025",
+  "status": "active",
+  "category": "Social Event",
+  "tags": ["Networking", "Dinner", "Entertainment"],
+  "theme": "Elegant",
+  "coverImage": "/uploads/events/summer-gala-cover.jpg",
+
+  "schedule": {
+    "date": "2025-08-16",
+    "startTime": "18:00",
+    "endTime": "23:00",
+    "timezone": "Africa/Lagos"
+  },
+
+  "venue": {
+    "name": "The Grand Pavilion",
+    "address": "Victoria Island, Lagos",
+    "city": "Lagos",
+    "country": "Nigeria"
+  },
+
+  "description": "An exclusive evening of networking, fine dining and entertainment.",
+  "additionalNotes": "Guests are expected to dress in elegant attire. Arrive early for a smooth check-in process.",
+
+  "capacity": {
+    "total": 300,
+    "registered": 248,
+    "checkedIn": 142
+  },
+
+  "invitations": {
+    "type": "qr_and_manual_code",
+    "pending": 56,
+    "accessControl": "unique_code_per_guest"
+  },
+
+  "accessRules": {
+    "allowedGroups": ["VIP", "General", "Staff"]
+  },
+
+  "checkInConfiguration": {
+    "method": "qr_and_manual_code",
+    "duplicatePrevention": true,
+    "realTimeUpdates": true
+  },
+
+  "staff": {
+    "totalAssigned": 8,
+    "maximumAllowed": 10,
+    "roles": ["Check-in Staff", "Event Manager", "Support"],
+    "members": [
+      {
+        "id": "staff_001",
+        "name": "John Doe",
+        "avatar": "/uploads/staff/john.jpg",
+        "role": "Event Manager"
+      },
+      {
+        "id": "staff_002",
+        "name": "Jane Smith",
+        "avatar": "/uploads/staff/jane.jpg",
+        "role": "Check-in Staff"
+      },
+      {
+        "id": "staff_003",
+        "name": "Michael James",
+        "avatar": "/uploads/staff/michael.jpg",
+        "role": "Support"
+      }
+    ]
+  },
+
+  "updatedAt": "2025-08-10T14:30:00.000Z"
+}

@@ -1,8 +1,9 @@
 <div class="overflow-x-auto">
-  <table class="w-full bg-white rounded-xl border border-border overflow-hidden">
+  <!-- rounded-xl -->
+  <table class="w-full bg-white border rounded-lg border-border">
     <thead>
       @for (headerGroup of table.getHeaderGroups(); track headerGroup.id) {
-        <tr class="border-b border-border">
+        <tr class="border-b rounded-lg border-border bg-gray-100">
           @for (header of headerGroup.headers; track header.id) {
             <th class="text-left px-4 py-3">
               @if (!header.isPlaceholder) {
@@ -27,7 +28,7 @@
     </thead>
     <tbody>
       @for (row of table.getRowModel().rows; track row.id) {
-        <tr class="border-b bg-white border-border hover:bg-background/50">
+        <tr class="border-b bg-white border-border hover:bg-background/50 rounded-lg">
           @for (cell of row.getVisibleCells(); track cell.id) {
             <td class="px-4 py-3">
               @if (cellTemplates()[cell.column.id]; as tpl) {

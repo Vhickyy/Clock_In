@@ -15,7 +15,7 @@ export type IconName = keyof typeof ICONS;
 })
 export class Icon {
   name = input.required<IconName>();
-  size = input(20);
+  size = input(17);
   strokeWidth = input(2);
   className = input<string>();
   cn = cn;

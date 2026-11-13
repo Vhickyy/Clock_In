@@ -1,0 +1,184 @@
+@if (eventDetailRes.hasValue()) {
+  @if (eventDetailRes.value()) {
+    <div
+      variant="meta"
+      routerLink="/dashboard/events"
+      class="flex gap-2 items-center pb-4 cursor-pointer"
+    >
+      <app-icon name="arrowLeft" [size]="17" />
+      <p appText variant="meta" className="text-champagne!">Back to Events</p>
+    </div>
+    <section class="relative overflow-clip rounded-xl">
+      <img src="clock_in_hero.png" alt="" class="h-52 w-full object-cover" />
+      <div
+        class="absolute w-full h-full inset-0 bg-linear-to-r from-primary-dark via-primary/80 to-primary/20 p-8 z-10"
+      >
+        <h4 appText variant="title" className="text-white!">{{ eventDetailRes.value()?.name }}</h4>
+        <div></div>
+      </div>
+    </section>
+
+    <section class="flex gap-4 mt-10">
+      <aside class="flex-1">
+        <app-event-tabs />
+
+        <div class="bg-white border border-border rounded-xl p-6 mt-8">
+          <!-- <div> -->
+          <div class="flex items-center gap-4 border-b border-b-border pb-4">
+            <div class="bg-gray-100 p-3 rounded-full">
+              <app-icon name="calendar" className="text-gray-700" />
+            </div>
+            <h5 appText variant="cardTitle" className="">Event Summary</h5>
+          </div>
+          <div class="grid grid-cols-3 mt-4">
+            <div class="grid gap-4">
+              <div>
+                <h5 appText className="md:text-sm">Event Name</h5>
+                <p appText variant="cardTitle">{{ eventDetailRes.value()?.name }}</p>
+              </div>
+              <div>
+                <h5 appText className="md:text-sm">Event Type</h5>
+                <p appText variant="cardTitle">{{ eventDetailRes.value()?.category }}</p>
+              </div>
+              <div>
+                <h5 appText className="md:text-sm">Theme</h5>
+                <p appText variant="cardTitle">
+                  {{ eventDetailRes.value()?.theme }}
+                </p>
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <div>
+                <h5 appText className="md:text-sm">Date & Time</h5>
+                <p appText variant="cardTitle">{{ eventDetailRes.value()?.schedule.date }}</p>
+                <p appText variant="cardTitle">
+                  {{ eventDetailRes.value()?.schedule.startTime }} -
+                  {{ eventDetailRes.value()?.schedule.endTime }}
+                </p>
+              </div>
+              <div>
+                <h5 appText className="md:text-sm">Venue</h5>
+                <p appText variant="cardTitle">{{ eventDetailRes.value()?.venue?.address }}</p>
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <div>
+                <h5 appText className="md:text-sm">Guest Capacity</h5>
+                <p appText variant="cardTitle">
+                  {{ eventDetailRes.value()?.capacity?.total }} guests
+                </p>
+              </div>
+              <div>
+                <h5 appText className="md:text-sm">Invitation Type</h5>
+                <p appText variant="cardTitle">{{ eventDetailRes.value()?.invitations?.type }}</p>
+              </div>
+              <div>
+                <h5 appText className="md:text-sm">Access Control</h5>
+                <p appText variant="cardTitle">
+                  {{ eventDetailRes.value()?.invitations?.accessControl }}
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- </div> -->
+        </div>
+
+        <div class="grid grid-cols-3 gap-3 mt-5">
+          <div class="grid gap-4 bg-white border border-border rounded-xl p-4">
+            <div class="flex items-center gap-2 border-b border-b-border pb-4">
+              <div class="bg-gray-100 p-2 rounded-full">
+                <app-icon name="users" [size]="18" className="text-gray-700" />
+              </div>
+              <h5 appText variant="cardTitle" className="">Guest Access Rules</h5>
+            </div>
+            <div>
+              <h5 appText className="md:text-sm">Guest Capacity</h5>
+              <p appText variant="cardTitle">
+                {{ eventDetailRes.value()?.capacity?.total }} guests
+              </p>
+            </div>
+            <div>
+              <h5 appText className="md:text-sm">Invitation Type</h5>
+              <p appText variant="cardTitle">{{ eventDetailRes.value()?.invitations?.type }}</p>
+            </div>
+            <div>
+              <h5 appText className="md:text-sm">Access Control</h5>
+              <p appText variant="cardTitle">
+                {{ eventDetailRes.value()?.invitations?.accessControl }}
+              </p>
+            </div>
+          </div>
+          <div class="grid gap-4 bg-white border border-border rounded-xl p-4">
+            <div class="flex items-center gap-2 border-b border-b-border pb-4">
+              <div class="bg-gray-100 p-2 rounded-full">
+                <app-icon name="qrCode" [size]="18" className="text-gray-700" />
+              </div>
+              <h5 appText variant="cardTitle" className="">Check-In Configuration</h5>
+            </div>
+            <div>
+              <h5 appText className="md:text-sm">Guest Capacity</h5>
+              <p appText variant="cardTitle">
+                {{ eventDetailRes.value()?.capacity?.total }} guests
+              </p>
+            </div>
+            <div>
+              <h5 appText className="md:text-sm">Invitation Type</h5>
+              <p appText variant="cardTitle">{{ eventDetailRes.value()?.invitations?.type }}</p>
+            </div>
+            <div>
+              <h5 appText className="md:text-sm">Access Control</h5>
+              <p appText variant="cardTitle">
+                {{ eventDetailRes.value()?.invitations?.accessControl }}
+              </p>
+            </div>
+          </div>
+          <div class="grid gap-4 bg-white border border-border rounded-xl p-4">
+            <div class="flex items-center gap-2 border-b border-b-border pb-4">
+              <div class="bg-gray-100 p-2 rounded-full">
+                <app-icon name="users" [size]="18" className="text-gray-700" />
+              </div>
+              <h5 appText variant="cardTitle" className="">Assigned Staff</h5>
+            </div>
+            <div>
+              <h5 appText className="md:text-sm">Guest Capacity</h5>
+              <p appText variant="cardTitle">
+                {{ eventDetailRes.value()?.capacity?.total }} guests
+              </p>
+            </div>
+            <div>
+              <h5 appText className="md:text-sm">Invitation Type</h5>
+              <p appText variant="cardTitle">{{ eventDetailRes.value()?.invitations?.type }}</p>
+            </div>
+            <div>
+              <h5 appText className="md:text-sm">Access Control</h5>
+              <p appText variant="cardTitle">
+                {{ eventDetailRes.value()?.invitations?.accessControl }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="w-[25%]">
+        <div class="bg-white/70 border border-border rounded-xl p-5">
+          <h5 appText variant="cardTitle" className="">Quick Actions</h5>
+          <div class="grid gap-2 mt-6">
+            @for (item of eventDetailData.quickActions; track $index) {
+              <div class="bg-white border border-border rounded-xl p-3 flex gap-3 items-center">
+                <div class="rounded-xl w-fit p-3 mb-2" [ngClass]="item.bgStyle">
+                  <app-icon [name]="item.icon" [size]="18" [className]="item.iconStyle" />
+                </div>
+                <div>
+                  <h5 appText variant="cardTitle">{{ item.title }}</h5>
+                  <p appText variant="meta">{{ item.description }}</p>
+                </div>
+              </div>
+            }
+          </div>
+        </div>
+      </aside>
+    </section>
+  }
+} @else {
+  <p>loading</p>
+}
