@@ -8,20 +8,16 @@ import {
   viewChild,
 } from '@angular/core';
 import { Icon } from '../../../../../shared/components/app-ui/icon/icon';
-import { Button } from '../../../../../shared/components/app-ui/button/button';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { Crumb } from '../../../../../shared/components/app-ui/app_types/text_types';
-import { EventDetailsStep } from './components/event-details-step/event-details-step';
-import { AccessRulesStep } from './components/access-rules-step/access-rules-step';
-import { InvitationsStep } from './components/invitations-step/invitations-step';
-import { PreviewStep } from './components/preview-step/preview-step';
 import { CreateEventService } from './create-event-service';
-import { Stepper } from './components/stepper/stepper';
+import { Input } from '../../../../../shared/components/app-ui/input/input';
+import { Text } from '../../../../../shared/components/app-ui/text/text';
 
 export type CreatedEventAction = 'view' | 'invite';
 
 @Component({
-  imports: [Button, EventDetailsStep, AccessRulesStep, InvitationsStep, PreviewStep, Stepper],
+  imports: [Icon, Input, Text, RouterLink],
   selector: 'app-create-event',
   styleUrl: './create-event.css',
   templateUrl: './create-event.html',

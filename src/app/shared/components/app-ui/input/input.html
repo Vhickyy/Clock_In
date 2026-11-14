@@ -1,4 +1,4 @@
-<div class="flex flex-col gap-2 w-full flex-1">
+<div [class]="cn('flex flex-col gap-2 w-full flex-1', inputClass)">
   @if (label()) {
     <label for="email" class="font-semibold text-sm text-text">{{ label() }}</label>
   }

@@ -1,75 +1,190 @@
-<div class="flex flex-col gap-6">
-  <!-- <app-page-header title="Create a New Event" [subtitle]="meta().subtitle" [crumbs]="crumbs">
-        <div
-          slot="action"
-          class="inline-flex items-center gap-2 rounded-full border border-champagne/60 bg-champagne-light px-4 py-2 text-primary"
-        >
-          <app-icon name="building" [size]="16" />
-          <span class="font-body text-xs font-semibold">Creating in {{ org.current().name }}</span>
-        </div>
-      </app-page-header> -->
-
-  <!-- <app-stepper
-    [steps]="createEventService.steps"
-    [current]="createEventService.step()"
-    [furthest]="createEventService.furthest()"
-    (stepSelected)="goTo($event)"
-  /> -->
-
-  <form
-    novalidate
-    class="rounded-2xl border border-border bg-surface/80 p-6 shadow-sm sm:p-8"
-    (submit)="onSubmit($event)"
-  >
-    <h2
-      #heading
-      tabindex="-1"
-      class="mb-6 font-heading text-xl font-semibold text-text outline-none md:text-2xl"
-    >
-      {{ meta().heading }}
-    </h2>
-
-    @switch (createEventService.step()) {
-      @case (0) {
-        <app-event-details-step />
-      }
-      @case (1) {
-        <app-access-rules-step />
-      }
-      @case (2) {
-        <app-invitations-step />
-      }
-      @case (3) {
-        <app-preview-step />
-      }
-    }
-
-    <footer class="mt-8 flex items-center justify-between gap-3 border-t border-border pt-6">
-      <!-- @if (createEventService.step() === 0) {
-        <app-button
-          [textProps]="{ text: 'Cancel', variant: 'buttonText' }"
-          [iconProps]="{ name: 'arrowLeft', size: 16 }"
-          /* [btnClass]="outline" */
-          (click)="cancel()"
-        />
-      } @else {
-        <app-button
-          [textProps]="{ text: 'Back', variant: 'buttonText' }"
-          [iconProps]="{ name: 'arrowLeft', size: 16 }"
-          /* [btnClass]="outline" */
-          (click)="back()"
-        />
-      } -->
-
-      <!-- type="submit": Enter in a field continues, and the form handles both next and create -->
-      <!-- <app-button
-        type="submit"
-        [textProps]="{ text: meta().next, variant: 'buttonText' }"
-        [iconProps]="createEventService.isLastStep() ? { name: 'calendar', size: 16 } : undefined"
-        /* [btnClass]="primary" */
-        [loading]="createEventService.submitting()"
-        [disabled]="createEventService.submitting()"
-      /> -->
-    </footer>
-  </form>
+<div
+  variant="meta"
+  routerLink="/dashboard/events"
+  class="flex gap-2 items-center pb-4 cursor-pointer"
+>
+  <app-icon name="arrowLeft" [size]="17" />
+  <p appText variant="meta" className="text-champagne!">Back to Events</p>
 </div>
+
+<section>
+  <h2 appText variant="pageTitle">Create Event</h2>
+  <p appText variant="subtitle">Add a new guest to your event.</p>
+
+  <div class="flex gap-4 mt-6">
+    <div class="bg-white border border-border p-6 rounded-xl grid gap-4 flex-1 h-fit">
+      <aside class="grid gap-4 border-b border-border pb-6">
+        <div>
+          <h3 appText variant="panelTitle">Event Information</h3>
+          <p appText variant="subtitle">Add a new guest to your event.</p>
+        </div>
+
+        <div class="flex gap-6">
+          <div class="flex-1">
+            <app-input id="event-name" label="Event Name" inputClass="flex-1!">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="event-name"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+          <div class="flex-1">
+            <app-input id="event-type" label="Event Type">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="event-type"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-1">
+            <app-input id="description" label="Description" inputClass="flex-1!">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="description"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="grid gap-4 pb-6 border-b border-border">
+        <div>
+          <h3 appText variant="panelTitle">Date & Location</h3>
+          <p appText variant="subtitle">Set how many people this guest can bring.</p>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-1">
+            <app-input id="date" label="Date" inputClass="flex-1!">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="date"
+                type="date"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+          <div class="flex-1">
+            <app-input id="city" label="City">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="city"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-1">
+            <app-input id="date" label="Date" inputClass="flex-1!">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="date"
+                type="date"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+          <div class="flex-1">
+            <app-input id="city" label="City">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="city"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+        </div>
+      </aside>
+      <aside class="grid gap-4">
+        <div>
+          <h3 appText variant="panelTitle">Capacity</h3>
+          <p appText variant="subtitle">Set a limit so you never over-book the venue.</p>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-1">
+            <app-input id="date" label="Date" inputClass="flex-1!">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="date"
+                type="date"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+          <div class="flex-1">
+            <app-input id="city" label="City">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="city"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-1">
+            <app-input id="date" label="Date" inputClass="flex-1!">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="date"
+                type="date"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+          <div class="flex-1">
+            <app-input id="city" label="City">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="city"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="w-[30%] border border-border p-6 rounded-xl bg-white h-fit">
+      <div class="grid gap-4 border-b border-border pb-6">
+        <div>
+          <h3 appText variant="panelTitle">Who can attend?</h3>
+          <p appText variant="subtitle">Set how many people this guest can bring.</p>
+        </div>
+        <div class="grid gap-2">
+          @for (item of [1, 2]; track $index) {
+            <div class="border border-border bg-white rounded-md p-4">
+              <app-icon name="qrCode" />
+              <div>
+                <h3 appText variant="meta" className="font-semibold">Invitation Only</h3>
+                <p appText variant="meta">A unique QR code the guest scans at the door.</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="grid gap-4 mt-4">
+        <div>
+          <h3 appText variant="panelTitle">Check-in code</h3>
+          <p appText variant="subtitle">How guests prove they are on the list at the door.</p>
+        </div>
+        <div class="grid gap-2">
+          @for (item of [1, 2]; track $index) {
+            <div class="border border-border bg-white rounded-md p-4">
+              <app-icon name="qrCode" />
+              <div>
+                <h3 appText variant="meta" className="font-semibold">Delivery Method</h3>
+                <p appText variant="meta">A unique QR code guests scan at the door.</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

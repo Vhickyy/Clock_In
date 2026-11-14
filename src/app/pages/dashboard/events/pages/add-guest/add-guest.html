@@ -1,0 +1,141 @@
+<div
+  variant="meta"
+  routerLink="/dashboard/events/1/guests"
+  class="flex gap-2 items-center pb-4 cursor-pointer"
+>
+  <app-icon name="arrowLeft" [size]="17" />
+  <p appText variant="meta" className="text-champagne!">Back to Guest Directory</p>
+</div>
+
+<section>
+  <h2 appText variant="pageTitle">Add Guest</h2>
+  <p appText variant="subtitle">Add a new guest to your event.</p>
+
+  <div class="flex gap-4 mt-6">
+    <div class="bg-white border border-border p-6 rounded-xl grid gap-4 flex-1">
+      <aside class="grid gap-4 border-b border-border pb-6">
+        <div>
+          <h3 appText variant="panelTitle">Guest Information</h3>
+          <p appText variant="subtitle">Add a new guest to your event.</p>
+        </div>
+
+        <div class="grid gap-2">
+          <p appText variant="meta" className="text-black font-semibold">Title</p>
+          <div class="flex gap-4 flex-wrap max-w-[50%]">
+            @for (item of [1, 2, 3, 4, 5]; track $index) {
+              <div
+                class="w-fit px-6 py-1.5 rounded-full border border-champagne text-champagne font-semibold"
+              >
+                <p appText variant="meta">Hello</p>
+              </div>
+            }
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-1">
+            <app-input id="full-name" label="Guest Full Name" inputClass="flex-1!">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="full-name"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+          <div class="flex-1">
+            <app-input id="address-as" label="Address As">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="address-as"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-1">
+            <app-input id="email" label="Guest Email" inputClass="flex-1!">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="email"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+          <div class="flex-1">
+            <app-input id="phone" label="Guest Phone Number">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="phone"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+        </div>
+      </aside>
+
+      <aside class="grid gap-4">
+        <div>
+          <h3 appText variant="panelTitle">Guest Allowed</h3>
+          <p appText variant="subtitle">Set how many people this guest can bring.</p>
+        </div>
+        <div class="flex gap-6">
+          <div class="flex-1">
+            <app-input id="email" label="Guest Email" inputClass="flex-1!">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="email"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+          <div class="flex-1">
+            <app-input id="phone" label="Guest Phone Number">
+              <input
+                placeholder="e.g. Sarah & John's Wedding"
+                /* [formField]="form.name" */
+                id="phone"
+                class="w-full outline-none text-text text-sm"
+            /></app-input>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="w-[30%] border border-border p-6 rounded-xl bg-white">
+      <div class="grid gap-4 border-b border-border pb-6">
+        <div>
+          <h3 appText variant="panelTitle">Invitation Method</h3>
+          <p appText variant="subtitle">Set how many people this guest can bring.</p>
+        </div>
+        <div class="grid gap-2">
+          @for (item of [1, 2]; track $index) {
+            <div class="border border-border bg-white rounded-md p-4">
+              <app-icon name="qrCode" />
+              <div>
+                <h3 appText variant="meta" className="font-semibold">Invitation Method</h3>
+                <p appText variant="meta">A unique QR code the guest scans at the door.</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+      <div class="grid gap-4 mt-4">
+        <div>
+          <h3 appText variant="panelTitle">Delivery Method</h3>
+          <p appText variant="subtitle">Set how many people this guest can bring.</p>
+        </div>
+        <div class="grid gap-2">
+          @for (item of [1, 2]; track $index) {
+            <div class="border border-border bg-white rounded-md p-4">
+              <app-icon name="qrCode" />
+              <div>
+                <h3 appText variant="meta" className="font-semibold">Delivery Method</h3>
+                <p appText variant="meta">Set how many people this guest can bring.</p>
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

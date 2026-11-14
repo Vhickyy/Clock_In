@@ -77,6 +77,11 @@ export const routes: Routes = [
             loadComponent: () =>
               import('./pages/dashboard/events/pages/guests/guests').then((m) => m.Guests),
           },
+          {
+            path: ':id/guests/add',
+            loadComponent: () =>
+              import('./pages/dashboard/events/pages/add-guest/add-guest').then((m) => m.AddGuest),
+          },
         ],
       },
     ],

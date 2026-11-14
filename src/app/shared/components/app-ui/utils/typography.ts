@@ -34,7 +34,7 @@ export const textVariants = {
   // ─────────────── DASHBOARD: HEADINGS ───────────────
   pageTitle: {
     // "Choose Your Workspace"
-    classes: 'font-heading text-2xl font-semibold leading-tight text-text md:text-3xl',
+    classes: 'text-2xl font-semibold leading-tight text-text md:text-3xl',
   },
   eventTitle: {
     // "Summer Gala 2025" ~40px at 1536, ~28px on mobile

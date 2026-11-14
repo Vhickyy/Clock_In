@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { Icon, IconName } from '../icon/icon';
 import { Field, FormField } from '@angular/forms/signals';
+import { cn } from '../../../utils/cn';
 
 @Component({
   selector: 'app-input',
@@ -16,5 +17,7 @@ export class Input {
   leftIcon = input<IconName>();
   rightIcon = input<IconName>();
   id = input();
+  cn = cn;
+  inputClass = input<string>();
   // field = input.required<Field<any, string | number>>();
 }
